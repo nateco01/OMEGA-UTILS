@@ -1,0 +1,853 @@
+{
+    "Si": {
+        "structure_name": "Si",
+        "crystal_structure": "diamond",
+        "lattice_parameters": {
+            "a": 5.43
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                2.715,
+                2.715
+            ],
+            [
+                2.715,
+                0.0,
+                2.715
+            ],
+            [
+                2.715,
+                2.715,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 2,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Si",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "Si",
+                "pos_xyz": [
+                    1.3575,
+                    1.3575,
+                    1.3575
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Ge": {
+        "structure_name": "Ge",
+        "crystal_structure": "diamond",
+        "lattice_parameters": {
+            "a": 5.658
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                2.829,
+                2.829
+            ],
+            [
+                2.829,
+                0.0,
+                2.829
+            ],
+            [
+                2.829,
+                2.829,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 2,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Ge",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "Ge",
+                "pos_xyz": [
+                    1.4145,
+                    1.4145,
+                    1.4145
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "C_diamond": {
+        "structure_name": "C_diamond",
+        "crystal_structure": "diamond",
+        "lattice_parameters": {
+            "a": 3.567
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                1.7835,
+                1.7835
+            ],
+            [
+                1.7835,
+                0.0,
+                1.7835
+            ],
+            [
+                1.7835,
+                1.7835,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 2,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "C",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "C",
+                "pos_xyz": [
+                    0.89175,
+                    0.89175,
+                    0.89175
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Fe": {
+        "structure_name": "Fe",
+        "crystal_structure": "bcc",
+        "lattice_parameters": {
+            "a": 2.866
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                -1.433,
+                1.433,
+                1.433
+            ],
+            [
+                1.433,
+                -1.433,
+                1.433
+            ],
+            [
+                1.433,
+                1.433,
+                -1.433
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Fe",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "W": {
+        "structure_name": "W",
+        "crystal_structure": "bcc",
+        "lattice_parameters": {
+            "a": 3.165
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                -1.5825,
+                1.5825,
+                1.5825
+            ],
+            [
+                1.5825,
+                -1.5825,
+                1.5825
+            ],
+            [
+                1.5825,
+                1.5825,
+                -1.5825
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "W",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Mo": {
+        "structure_name": "Mo",
+        "crystal_structure": "bcc",
+        "lattice_parameters": {
+            "a": 3.147
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                -1.5735,
+                1.5735,
+                1.5735
+            ],
+            [
+                1.5735,
+                -1.5735,
+                1.5735
+            ],
+            [
+                1.5735,
+                1.5735,
+                -1.5735
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Mo",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Al": {
+        "structure_name": "Al",
+        "crystal_structure": "fcc",
+        "lattice_parameters": {
+            "a": 4.049
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                2.0245,
+                2.0245
+            ],
+            [
+                2.0245,
+                0.0,
+                2.0245
+            ],
+            [
+                2.0245,
+                2.0245,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Al",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Cu": {
+        "structure_name": "Cu",
+        "crystal_structure": "fcc",
+        "lattice_parameters": {
+            "a": 3.615
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                1.8075,
+                1.8075
+            ],
+            [
+                1.8075,
+                0.0,
+                1.8075
+            ],
+            [
+                1.8075,
+                1.8075,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Cu",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Au": {
+        "structure_name": "Au",
+        "crystal_structure": "fcc",
+        "lattice_parameters": {
+            "a": 4.078
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                2.039,
+                2.039
+            ],
+            [
+                2.039,
+                0.0,
+                2.039
+            ],
+            [
+                2.039,
+                2.039,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Au",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Ag": {
+        "structure_name": "Ag",
+        "crystal_structure": "fcc",
+        "lattice_parameters": {
+            "a": 4.085
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                2.0425,
+                2.0425
+            ],
+            [
+                2.0425,
+                0.0,
+                2.0425
+            ],
+            [
+                2.0425,
+                2.0425,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Ag",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Ni": {
+        "structure_name": "Ni",
+        "crystal_structure": "fcc",
+        "lattice_parameters": {
+            "a": 3.524
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                1.762,
+                1.762
+            ],
+            [
+                1.762,
+                0.0,
+                1.762
+            ],
+            [
+                1.762,
+                1.762,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Ni",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Pt": {
+        "structure_name": "Pt",
+        "crystal_structure": "fcc",
+        "lattice_parameters": {
+            "a": 3.924
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                1.962,
+                1.962
+            ],
+            [
+                1.962,
+                0.0,
+                1.962
+            ],
+            [
+                1.962,
+                1.962,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Pt",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Pb": {
+        "structure_name": "Pb",
+        "crystal_structure": "fcc",
+        "lattice_parameters": {
+            "a": 4.95
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                2.475,
+                2.475
+            ],
+            [
+                2.475,
+                0.0,
+                2.475
+            ],
+            [
+                2.475,
+                2.475,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 1,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Pb",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Ti": {
+        "structure_name": "Ti",
+        "crystal_structure": "hcp",
+        "lattice_parameters": {
+            "a": 2.951,
+            "c": 4.686
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                2.951,
+                0.0,
+                0.0
+            ],
+            [
+                -1.4755,
+                2.5556409665678785,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                4.686
+            ]
+        ],
+        "number_of_atoms": 2,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Ti",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "Ti",
+                "pos_xyz": [
+                    5.460446909448062e-17,
+                    1.7037606443785855,
+                    2.343
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Mg": {
+        "structure_name": "Mg",
+        "crystal_structure": "hcp",
+        "lattice_parameters": {
+            "a": 3.209,
+            "c": 5.21
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                3.209,
+                0.0,
+                0.0
+            ],
+            [
+                -1.6045,
+                2.7790755207442635,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                5.21
+            ]
+        ],
+        "number_of_atoms": 2,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Mg",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "Mg",
+                "pos_xyz": [
+                    -8.865130851631875e-17,
+                    1.8527170138295088,
+                    2.605
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Zn": {
+        "structure_name": "Zn",
+        "crystal_structure": "hcp",
+        "lattice_parameters": {
+            "a": 2.665,
+            "c": 4.947
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                2.665,
+                0.0,
+                0.0
+            ],
+            [
+                -1.3325,
+                2.307957701085529,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                4.947
+            ]
+        ],
+        "number_of_atoms": 2,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Zn",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "Zn",
+                "pos_xyz": [
+                    1.2304971856262152e-17,
+                    1.5386384673903524,
+                    2.4735
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "NaCl": {
+        "structure_name": "NaCl",
+        "crystal_structure": "rocksalt",
+        "lattice_parameters": {
+            "a": 5.64
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                0.0,
+                2.82,
+                2.82
+            ],
+            [
+                2.82,
+                0.0,
+                2.82
+            ],
+            [
+                2.82,
+                2.82,
+                0.0
+            ]
+        ],
+        "number_of_atoms": 2,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Na",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "Cl",
+                "pos_xyz": [
+                    2.82,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "CsCl": {
+        "structure_name": "CsCl",
+        "crystal_structure": "cesiumchloride",
+        "lattice_parameters": {
+            "a": 4.123
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                4.123,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                4.123,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                4.123
+            ]
+        ],
+        "number_of_atoms": 2,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "Cs",
+                "pos_xyz": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "Cl",
+                "pos_xyz": [
+                    2.0615,
+                    2.0615,
+                    2.0615
+                ]
+            }
+        ],
+        "pbc": [
+            true,
+            true,
+            true
+        ]
+    },
+    "Graphene": {
+        "structure_name": "Graphene",
+        "crystal_structure": "hexagonal_2d",
+        "lattice_parameters": {
+            "a": 2.46
+        },
+        "unit_cell_vectors_angstrom": [
+            [
+                21.229756073373903,
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                20.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                4.26
+            ]
+        ],
+        "number_of_atoms": 4,
+        "atomic_positions_angstrom": [
+            {
+                "symbol": "C",
+                "pos_xyz": [
+                    10.0,
+                    10.0,
+                    0.0
+                ]
+            },
+            {
+                "symbol": "C",
+                "pos_xyz": [
+                    11.229756073373903,
+                    10.0,
+                    0.71
+                ]
+            },
+            {
+                "symbol": "C",
+                "pos_xyz": [
+                    11.229756073373903,
+                    10.0,
+                    2.13
+                ]
+            },
+            {
+                "symbol": "C",
+                "pos_xyz": [
+                    10.0,
+                    10.0,
+                    2.84
+                ]
+            }
+        ],
+        "pbc": [
+            false,
+            false,
+            true
+        ]
+    }
+}

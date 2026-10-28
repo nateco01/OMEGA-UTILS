@@ -1,0 +1,1362 @@
+{
+    "CycloHexane": {
+        "name": "CycloHexane",
+        "molar_mass_kg_mol": 0.08415948000000001,
+        "critical_temperature_K": 553.6000188557726,
+        "critical_pressure_Pa": 4080525.8791621355,
+        "triple_point_temperature_K": 279.47,
+        "min_temperature_K": 279.47,
+        "max_temperature_K": 700.0,
+        "max_pressure_Pa": null
+    },
+    "CycloPropane": {
+        "name": "CycloPropane",
+        "molar_mass_kg_mol": 0.042081,
+        "critical_temperature_K": 398.69205265912154,
+        "critical_pressure_Pa": 5605282.60479084,
+        "triple_point_temperature_K": 273.0,
+        "min_temperature_K": 273.0,
+        "max_temperature_K": 473.0,
+        "max_pressure_Pa": null
+    },
+    "R1233zd(E)": {
+        "name": "R1233zd(E)",
+        "molar_mass_kg_mol": 0.1304962,
+        "critical_temperature_K": 438.860000000042,
+        "critical_pressure_Pa": 3582752.889649124,
+        "triple_point_temperature_K": 165.75,
+        "min_temperature_K": 165.75,
+        "max_temperature_K": 450.0,
+        "max_pressure_Pa": null
+    },
+    "n-Perfluorohexane": {
+        "name": "n-Perfluorohexane",
+        "molar_mass_kg_mol": 0.33804199999999995,
+        "critical_temperature_K": 448.000000604543,
+        "critical_pressure_Pa": 1741580.8954605232,
+        "triple_point_temperature_K": 187.07,
+        "min_temperature_K": 187.07,
+        "max_temperature_K": 450.0,
+        "max_pressure_Pa": null
+    },
+    "MethylOleate": {
+        "name": "MethylOleate",
+        "molar_mass_kg_mol": 0.29648794,
+        "critical_temperature_K": 782.0001332054759,
+        "critical_pressure_Pa": 1246000.7777377798,
+        "triple_point_temperature_K": 253.47,
+        "min_temperature_K": 253.47,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "VinylChloride": {
+        "name": "VinylChloride",
+        "molar_mass_kg_mol": 0.06249822,
+        "critical_temperature_K": 425.00000322386774,
+        "critical_pressure_Pa": 5600308.557855942,
+        "triple_point_temperature_K": 119.31,
+        "min_temperature_K": 119.31,
+        "max_temperature_K": 430.0,
+        "max_pressure_Pa": null
+    },
+    "Neopentane": {
+        "name": "Neopentane",
+        "molar_mass_kg_mol": 0.07214878,
+        "critical_temperature_K": 433.73959183134286,
+        "critical_pressure_Pa": 3196297.459275961,
+        "triple_point_temperature_K": 256.6,
+        "min_temperature_K": 256.6,
+        "max_temperature_K": 550.0,
+        "max_pressure_Pa": null
+    },
+    "MethylLinoleate": {
+        "name": "MethylLinoleate",
+        "molar_mass_kg_mol": 0.29447206,
+        "critical_temperature_K": 799.0001945392406,
+        "critical_pressure_Pa": 1340820.8824579124,
+        "triple_point_temperature_K": 260.0,
+        "min_temperature_K": 260.0,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "R12": {
+        "name": "R12",
+        "molar_mass_kg_mol": 0.120913,
+        "critical_temperature_K": 385.1199997681344,
+        "critical_pressure_Pa": 4136165.62843796,
+        "triple_point_temperature_K": 116.099,
+        "min_temperature_K": 116.099,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "R113": {
+        "name": "R113",
+        "molar_mass_kg_mol": 0.187375,
+        "critical_temperature_K": 487.2100000166609,
+        "critical_pressure_Pa": 3392266.3311416013,
+        "triple_point_temperature_K": 236.93,
+        "min_temperature_K": 236.93,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "R161": {
+        "name": "R161",
+        "molar_mass_kg_mol": 0.0480595,
+        "critical_temperature_K": 375.24999890354485,
+        "critical_pressure_Pa": 5009983.394163007,
+        "triple_point_temperature_K": 130.0,
+        "min_temperature_K": 130.0,
+        "max_temperature_K": 450.0,
+        "max_pressure_Pa": null
+    },
+    "R507A": {
+        "name": "R507A",
+        "molar_mass_kg_mol": 0.09885920000000001,
+        "critical_temperature_K": 343.765,
+        "critical_pressure_Pa": 3704900.0,
+        "triple_point_temperature_K": 200.0,
+        "min_temperature_K": 200.0,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "n-Perfluoropentane": {
+        "name": "n-Perfluoropentane",
+        "molar_mass_kg_mol": 0.288034,
+        "critical_temperature_K": 421.0000013150284,
+        "critical_pressure_Pa": 2062913.1999372742,
+        "triple_point_temperature_K": 148.21,
+        "min_temperature_K": 148.21,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "R365MFC": {
+        "name": "R365MFC",
+        "molar_mass_kg_mol": 0.14807452,
+        "critical_temperature_K": 460.0031716751766,
+        "critical_pressure_Pa": 3266391.896123609,
+        "triple_point_temperature_K": 239.0,
+        "min_temperature_K": 239.0,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "CarbonylSulfide": {
+        "name": "CarbonylSulfide",
+        "molar_mass_kg_mol": 0.0600751,
+        "critical_temperature_K": 378.7702697057428,
+        "critical_pressure_Pa": 6368799.940027501,
+        "triple_point_temperature_K": 134.3,
+        "min_temperature_K": 134.3,
+        "max_temperature_K": 650.0,
+        "max_pressure_Pa": null
+    },
+    "n-Octane": {
+        "name": "n-Octane",
+        "molar_mass_kg_mol": 0.114229,
+        "critical_temperature_K": 568.7399999458576,
+        "critical_pressure_Pa": 2483591.1977593484,
+        "triple_point_temperature_K": 216.37,
+        "min_temperature_K": 216.37,
+        "max_temperature_K": 730.0,
+        "max_pressure_Pa": null
+    },
+    "R1224YDZ": {
+        "name": "R1224YDZ",
+        "molar_mass_kg_mol": 0.14848670000000003,
+        "critical_temperature_K": 428.69000000006275,
+        "critical_pressure_Pa": 3334038.4705547094,
+        "triple_point_temperature_K": 157.8,
+        "min_temperature_K": 157.8,
+        "max_temperature_K": 473.15,
+        "max_pressure_Pa": null
+    },
+    "R22": {
+        "name": "R22",
+        "molar_mass_kg_mol": 0.086468,
+        "critical_temperature_K": 369.2950000080274,
+        "critical_pressure_Pa": 4990000.000456738,
+        "triple_point_temperature_K": 115.73,
+        "min_temperature_K": 115.73,
+        "max_temperature_K": 550.0,
+        "max_pressure_Pa": null
+    },
+    "Hydrogen": {
+        "name": "Hydrogen",
+        "molar_mass_kg_mol": 0.00201588,
+        "critical_temperature_K": 33.1443326883113,
+        "critical_pressure_Pa": 1296357.6060553084,
+        "triple_point_temperature_K": 13.957,
+        "min_temperature_K": 13.957,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "D4": {
+        "name": "D4",
+        "molar_mass_kg_mol": 0.29661576,
+        "critical_temperature_K": 586.5000035318247,
+        "critical_pressure_Pa": 1347215.4316793245,
+        "triple_point_temperature_K": 290.25,
+        "min_temperature_K": 290.25,
+        "max_temperature_K": 1200.0,
+        "max_pressure_Pa": null
+    },
+    "R218": {
+        "name": "R218",
+        "molar_mass_kg_mol": 0.18801933,
+        "critical_temperature_K": 345.01996901445966,
+        "critical_pressure_Pa": 2640205.956168278,
+        "triple_point_temperature_K": 125.45,
+        "min_temperature_K": 125.45,
+        "max_temperature_K": 440.0,
+        "max_pressure_Pa": null
+    },
+    "R41": {
+        "name": "R41",
+        "molar_mass_kg_mol": 0.03403291999999999,
+        "critical_temperature_K": 317.2790638551427,
+        "critical_pressure_Pa": 5906114.695403155,
+        "triple_point_temperature_K": 129.82,
+        "min_temperature_K": 129.82,
+        "max_temperature_K": 425.0,
+        "max_pressure_Pa": null
+    },
+    "R21": {
+        "name": "R21",
+        "molar_mass_kg_mol": 0.1029227,
+        "critical_temperature_K": 452.72016234362053,
+        "critical_pressure_Pa": 5288505.217724644,
+        "triple_point_temperature_K": 200.0,
+        "min_temperature_K": 200.0,
+        "max_temperature_K": 473.0,
+        "max_pressure_Pa": null
+    },
+    "R245fa": {
+        "name": "R245fa",
+        "molar_mass_kg_mol": 0.13404794,
+        "critical_temperature_K": 427.00998969559254,
+        "critical_pressure_Pa": 3650995.024128124,
+        "triple_point_temperature_K": 171.05,
+        "min_temperature_K": 171.05,
+        "max_temperature_K": 440.0,
+        "max_pressure_Pa": null
+    },
+    "R1234yf": {
+        "name": "R1234yf",
+        "molar_mass_kg_mol": 0.1140416,
+        "critical_temperature_K": 367.84999999994756,
+        "critical_pressure_Pa": 3384373.6955661094,
+        "triple_point_temperature_K": 121.6,
+        "min_temperature_K": 121.6,
+        "max_temperature_K": 410.0,
+        "max_pressure_Pa": null
+    },
+    "Dichloroethane": {
+        "name": "Dichloroethane",
+        "molar_mass_kg_mol": 0.098959,
+        "critical_temperature_K": 561.5800290671409,
+        "critical_pressure_Pa": 5226120.870131313,
+        "triple_point_temperature_K": 237.52,
+        "min_temperature_K": 237.52,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "cis-2-Butene": {
+        "name": "cis-2-Butene",
+        "molar_mass_kg_mol": 0.05610631999999999,
+        "critical_temperature_K": 435.7500765852436,
+        "critical_pressure_Pa": 4236038.176467434,
+        "triple_point_temperature_K": 134.3,
+        "min_temperature_K": 134.3,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "R32": {
+        "name": "R32",
+        "molar_mass_kg_mol": 0.052024,
+        "critical_temperature_K": 351.25500044943203,
+        "critical_pressure_Pa": 5782645.093949692,
+        "triple_point_temperature_K": 136.34,
+        "min_temperature_K": 136.34,
+        "max_temperature_K": 435.0,
+        "max_pressure_Pa": null
+    },
+    "Neon": {
+        "name": "Neon",
+        "molar_mass_kg_mol": 0.020179,
+        "critical_temperature_K": 44.39999970498691,
+        "critical_pressure_Pa": 2661630.706279463,
+        "triple_point_temperature_K": 24.560000000000002,
+        "min_temperature_K": 24.560000000000002,
+        "max_temperature_K": 725.0,
+        "max_pressure_Pa": null
+    },
+    "1-Butene": {
+        "name": "1-Butene",
+        "molar_mass_kg_mol": 0.05610631999999999,
+        "critical_temperature_K": 419.29017967227105,
+        "critical_pressure_Pa": 4005723.7313242294,
+        "triple_point_temperature_K": 87.80000000000001,
+        "min_temperature_K": 87.80000000000001,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "n-Propane": {
+        "name": "n-Propane",
+        "molar_mass_kg_mol": 0.04409562,
+        "critical_temperature_K": 369.8900089509634,
+        "critical_pressure_Pa": 4251165.328013042,
+        "triple_point_temperature_K": 85.525,
+        "min_temperature_K": 85.525,
+        "max_temperature_K": 650.0,
+        "max_pressure_Pa": null
+    },
+    "R124": {
+        "name": "R124",
+        "molar_mass_kg_mol": 0.1364762,
+        "critical_temperature_K": 395.4279607732047,
+        "critical_pressure_Pa": 3624482.5109438105,
+        "triple_point_temperature_K": 120.0,
+        "min_temperature_K": 120.0,
+        "max_temperature_K": 470.0,
+        "max_pressure_Pa": null
+    },
+    "DiethylEther": {
+        "name": "DiethylEther",
+        "molar_mass_kg_mol": 0.0741216,
+        "critical_temperature_K": 467.8996408899039,
+        "critical_pressure_Pa": 3717320.6335552176,
+        "triple_point_temperature_K": 270.0,
+        "min_temperature_K": 270.0,
+        "max_temperature_K": 548.0,
+        "max_pressure_Pa": null
+    },
+    "R123": {
+        "name": "R123",
+        "molar_mass_kg_mol": 0.152931,
+        "critical_temperature_K": 456.8300258131298,
+        "critical_pressure_Pa": 3661805.269435811,
+        "triple_point_temperature_K": 166.0,
+        "min_temperature_K": 166.0,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "PropyleneGlycol": {
+        "name": "PropyleneGlycol",
+        "molar_mass_kg_mol": 0.07609442,
+        "critical_temperature_K": 673.9999955513622,
+        "critical_pressure_Pa": 7291754.190700835,
+        "triple_point_temperature_K": 213.0,
+        "min_temperature_K": 213.0,
+        "max_temperature_K": 680.0,
+        "max_pressure_Pa": null
+    },
+    "R410A": {
+        "name": "R410A",
+        "molar_mass_kg_mol": 0.07258540000000001,
+        "critical_temperature_K": 344.494,
+        "critical_pressure_Pa": 4901200.0,
+        "triple_point_temperature_K": 200.0,
+        "min_temperature_K": 200.0,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "RC318": {
+        "name": "RC318",
+        "molar_mass_kg_mol": 0.2000312,
+        "critical_temperature_K": 388.3710224426984,
+        "critical_pressure_Pa": 2777530.7008559005,
+        "triple_point_temperature_K": 233.35,
+        "min_temperature_K": 233.35,
+        "max_temperature_K": 623.0,
+        "max_pressure_Pa": null
+    },
+    "MM": {
+        "name": "MM",
+        "molar_mass_kg_mol": 0.16237752,
+        "critical_temperature_K": 518.7001252823088,
+        "critical_pressure_Pa": 1931134.437174969,
+        "triple_point_temperature_K": 204.93,
+        "min_temperature_K": 204.93,
+        "max_temperature_K": 673.0,
+        "max_pressure_Pa": null
+    },
+    "n-Decane": {
+        "name": "n-Decane",
+        "molar_mass_kg_mol": 0.14228168,
+        "critical_temperature_K": 617.6988452458754,
+        "critical_pressure_Pa": 2101336.691813891,
+        "triple_point_temperature_K": 243.5,
+        "min_temperature_K": 243.5,
+        "max_temperature_K": 675.0,
+        "max_pressure_Pa": null
+    },
+    "Nitrogen": {
+        "name": "Nitrogen",
+        "molar_mass_kg_mol": 0.02801348,
+        "critical_temperature_K": 126.19199999958556,
+        "critical_pressure_Pa": 3395800.444647145,
+        "triple_point_temperature_K": 63.151,
+        "min_temperature_K": 63.151,
+        "max_temperature_K": 2000.0,
+        "max_pressure_Pa": null
+    },
+    "Toluene": {
+        "name": "Toluene",
+        "molar_mass_kg_mol": 0.09213842,
+        "critical_temperature_K": 591.7490789362913,
+        "critical_pressure_Pa": 4126346.9485955853,
+        "triple_point_temperature_K": 178.0,
+        "min_temperature_K": 178.0,
+        "max_temperature_K": 700.0,
+        "max_pressure_Pa": null
+    },
+    "OrthoHydrogen": {
+        "name": "OrthoHydrogen",
+        "molar_mass_kg_mol": 0.00201594,
+        "critical_temperature_K": 33.21981462174088,
+        "critical_pressure_Pa": 1309791.9204848697,
+        "triple_point_temperature_K": 14.008000000000001,
+        "min_temperature_K": 14.008000000000001,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "HydrogenSulfide": {
+        "name": "HydrogenSulfide",
+        "molar_mass_kg_mol": 0.03408088,
+        "critical_temperature_K": 373.1008747131923,
+        "critical_pressure_Pa": 8998871.587082043,
+        "triple_point_temperature_K": 187.7,
+        "min_temperature_K": 187.7,
+        "max_temperature_K": 760.0,
+        "max_pressure_Pa": null
+    },
+    "R143a": {
+        "name": "R143a",
+        "molar_mass_kg_mol": 0.08404099999999999,
+        "critical_temperature_K": 345.85700086786187,
+        "critical_pressure_Pa": 3761818.2713949797,
+        "triple_point_temperature_K": 161.34,
+        "min_temperature_K": 161.34,
+        "max_temperature_K": 650.0,
+        "max_pressure_Pa": null
+    },
+    "ParaDeuterium": {
+        "name": "ParaDeuterium",
+        "molar_mass_kg_mol": 0.0040282,
+        "critical_temperature_K": 38.33999906574558,
+        "critical_pressure_Pa": 1679550.2649363957,
+        "triple_point_temperature_K": 18.724,
+        "min_temperature_K": 18.724,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "p-Xylene": {
+        "name": "p-Xylene",
+        "molar_mass_kg_mol": 0.106165,
+        "critical_temperature_K": 616.1680019419451,
+        "critical_pressure_Pa": 3531521.052252691,
+        "triple_point_temperature_K": 286.40000000000003,
+        "min_temperature_K": 286.40000000000003,
+        "max_temperature_K": 700.0,
+        "max_pressure_Pa": null
+    },
+    "MD3M": {
+        "name": "MD3M",
+        "molar_mass_kg_mol": 0.384839,
+        "critical_temperature_K": 628.0000256535702,
+        "critical_pressure_Pa": 953950.681224102,
+        "triple_point_temperature_K": 192.0,
+        "min_temperature_K": 192.0,
+        "max_temperature_K": 673.0,
+        "max_pressure_Pa": null
+    },
+    "n-Hexane": {
+        "name": "n-Hexane",
+        "molar_mass_kg_mol": 0.08617535999999999,
+        "critical_temperature_K": 507.8199998837351,
+        "critical_pressure_Pa": 3044115.3230223763,
+        "triple_point_temperature_K": 177.83,
+        "min_temperature_K": 177.83,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "R13I1": {
+        "name": "R13I1",
+        "molar_mass_kg_mol": 0.1959104,
+        "critical_temperature_K": 396.43969044596565,
+        "critical_pressure_Pa": 3952544.56195229,
+        "triple_point_temperature_K": 120.0,
+        "min_temperature_K": 120.0,
+        "max_temperature_K": 420.0,
+        "max_pressure_Pa": null
+    },
+    "Novec649": {
+        "name": "Novec649",
+        "molar_mass_kg_mol": 0.3160438,
+        "critical_temperature_K": 441.81001489490177,
+        "critical_pressure_Pa": 1869027.1118194864,
+        "triple_point_temperature_K": 165.0,
+        "min_temperature_K": 165.0,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "R227EA": {
+        "name": "R227EA",
+        "molar_mass_kg_mol": 0.17002886,
+        "critical_temperature_K": 374.9001034452502,
+        "critical_pressure_Pa": 2925248.665680179,
+        "triple_point_temperature_K": 146.35,
+        "min_temperature_K": 146.35,
+        "max_temperature_K": 475.0,
+        "max_pressure_Pa": null
+    },
+    "DimethylEther": {
+        "name": "DimethylEther",
+        "molar_mass_kg_mol": 0.04606844,
+        "critical_temperature_K": 400.3779999121906,
+        "critical_pressure_Pa": 5336664.806965011,
+        "triple_point_temperature_K": 131.66,
+        "min_temperature_K": 131.66,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "ParaHydrogen": {
+        "name": "ParaHydrogen",
+        "molar_mass_kg_mol": 0.00201588,
+        "critical_temperature_K": 32.93785506891549,
+        "critical_pressure_Pa": 1285776.1785274085,
+        "triple_point_temperature_K": 13.8033,
+        "min_temperature_K": 13.8033,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "D6": {
+        "name": "D6",
+        "molar_mass_kg_mol": 0.444924,
+        "critical_temperature_K": 645.7582612427082,
+        "critical_pressure_Pa": 961415.9797965303,
+        "triple_point_temperature_K": 270.2,
+        "min_temperature_K": 270.2,
+        "max_temperature_K": 673.0,
+        "max_pressure_Pa": null
+    },
+    "n-Pentane": {
+        "name": "n-Pentane",
+        "molar_mass_kg_mol": 0.07214878,
+        "critical_temperature_K": 469.69999987111663,
+        "critical_pressure_Pa": 3367518.9836068754,
+        "triple_point_temperature_K": 143.47,
+        "min_temperature_K": 143.47,
+        "max_temperature_K": 650.0,
+        "max_pressure_Pa": null
+    },
+    "R142b": {
+        "name": "R142b",
+        "molar_mass_kg_mol": 0.10049503,
+        "critical_temperature_K": 410.2602326520994,
+        "critical_pressure_Pa": 4054783.4201340955,
+        "triple_point_temperature_K": 142.72,
+        "min_temperature_K": 142.72,
+        "max_temperature_K": 470.0,
+        "max_pressure_Pa": null
+    },
+    "R141b": {
+        "name": "R141b",
+        "molar_mass_kg_mol": 0.11694962,
+        "critical_temperature_K": 477.5000277059733,
+        "critical_pressure_Pa": 4211652.068510759,
+        "triple_point_temperature_K": 169.68,
+        "min_temperature_K": 169.68,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "IsoButene": {
+        "name": "IsoButene",
+        "molar_mass_kg_mol": 0.05610631999999999,
+        "critical_temperature_K": 418.08980215358235,
+        "critical_pressure_Pa": 4015706.5347842663,
+        "triple_point_temperature_K": 132.4,
+        "min_temperature_K": 132.4,
+        "max_temperature_K": 550.0,
+        "max_pressure_Pa": null
+    },
+    "o-Xylene": {
+        "name": "o-Xylene",
+        "molar_mass_kg_mol": 0.106165,
+        "critical_temperature_K": 630.259003064399,
+        "critical_pressure_Pa": 3737459.7566424324,
+        "triple_point_temperature_K": 247.985,
+        "min_temperature_K": 247.985,
+        "max_temperature_K": 700.0,
+        "max_pressure_Pa": null
+    },
+    "n-Dodecane": {
+        "name": "n-Dodecane",
+        "molar_mass_kg_mol": 0.17033484,
+        "critical_temperature_K": 658.1000268582027,
+        "critical_pressure_Pa": 1817569.5498990365,
+        "triple_point_temperature_K": 263.6,
+        "min_temperature_K": 263.6,
+        "max_temperature_K": 700.0,
+        "max_pressure_Pa": null
+    },
+    "n-Perfluorobutane": {
+        "name": "n-Perfluorobutane",
+        "molar_mass_kg_mol": 0.238027,
+        "critical_temperature_K": 386.32600167442484,
+        "critical_pressure_Pa": 2322379.2311479277,
+        "triple_point_temperature_K": 144.0,
+        "min_temperature_K": 144.0,
+        "max_temperature_K": 450.0,
+        "max_pressure_Pa": null
+    },
+    "SES36": {
+        "name": "SES36",
+        "molar_mass_kg_mol": 0.18485,
+        "critical_temperature_K": 450.70000000000005,
+        "critical_pressure_Pa": 2849000.0,
+        "triple_point_temperature_K": 200.0,
+        "min_temperature_K": 200.0,
+        "max_temperature_K": 725.0,
+        "max_pressure_Pa": null
+    },
+    "R1243zf": {
+        "name": "R1243zf",
+        "molar_mass_kg_mol": 0.09605113,
+        "critical_temperature_K": 376.9299999999809,
+        "critical_pressure_Pa": 3513667.3665408525,
+        "triple_point_temperature_K": 122.35,
+        "min_temperature_K": 122.35,
+        "max_temperature_K": 430.0,
+        "max_pressure_Pa": null
+    },
+    "CarbonMonoxide": {
+        "name": "CarbonMonoxide",
+        "molar_mass_kg_mol": 0.0280101,
+        "critical_temperature_K": 132.85989463386605,
+        "critical_pressure_Pa": 3498194.6661988837,
+        "triple_point_temperature_K": 68.16,
+        "min_temperature_K": 68.16,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "R1336mzz(Z)": {
+        "name": "R1336mzz(Z)",
+        "molar_mass_kg_mol": 0.164056,
+        "critical_temperature_K": 444.49999102533667,
+        "critical_pressure_Pa": 2903710.4698715378,
+        "triple_point_temperature_K": 182.65,
+        "min_temperature_K": 182.65,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "Cyclopentane": {
+        "name": "Cyclopentane",
+        "molar_mass_kg_mol": 0.07013290000000001,
+        "critical_temperature_K": 511.7200672568634,
+        "critical_pressure_Pa": 4582765.586028514,
+        "triple_point_temperature_K": 179.70000000000002,
+        "min_temperature_K": 179.70000000000002,
+        "max_temperature_K": 550.0,
+        "max_pressure_Pa": null
+    },
+    "HFE143m": {
+        "name": "HFE143m",
+        "molar_mass_kg_mol": 0.10004,
+        "critical_temperature_K": 377.9175745010497,
+        "critical_pressure_Pa": 3644942.1391154304,
+        "triple_point_temperature_K": 240.0,
+        "min_temperature_K": 240.0,
+        "max_temperature_K": 420.0,
+        "max_pressure_Pa": null
+    },
+    "Air": {
+        "name": "Air",
+        "molar_mass_kg_mol": 0.02896546,
+        "critical_temperature_K": 132.5306,
+        "critical_pressure_Pa": 3786000.0,
+        "triple_point_temperature_K": 59.75,
+        "min_temperature_K": 59.75,
+        "max_temperature_K": 2000.0,
+        "max_pressure_Pa": null
+    },
+    "R13": {
+        "name": "R13",
+        "molar_mass_kg_mol": 0.104459,
+        "critical_temperature_K": 303.04990563421336,
+        "critical_pressure_Pa": 3973109.0447470606,
+        "triple_point_temperature_K": 98.15,
+        "min_temperature_K": 98.15,
+        "max_temperature_K": 450.0,
+        "max_pressure_Pa": null
+    },
+    "Ammonia": {
+        "name": "Ammonia",
+        "molar_mass_kg_mol": 0.01703052,
+        "critical_temperature_K": 405.55999997326353,
+        "critical_pressure_Pa": 11363391.157414673,
+        "triple_point_temperature_K": 195.495,
+        "min_temperature_K": 195.495,
+        "max_temperature_K": 725.0,
+        "max_pressure_Pa": null
+    },
+    "Ethane": {
+        "name": "Ethane",
+        "molar_mass_kg_mol": 0.03006904,
+        "critical_temperature_K": 305.3220000000155,
+        "critical_pressure_Pa": 4872199.977781725,
+        "triple_point_temperature_K": 90.368,
+        "min_temperature_K": 90.368,
+        "max_temperature_K": 675.0,
+        "max_pressure_Pa": null
+    },
+    "Ethylene": {
+        "name": "Ethylene",
+        "molar_mass_kg_mol": 0.02805376,
+        "critical_temperature_K": 282.35000000000247,
+        "critical_pressure_Pa": 5041692.174747926,
+        "triple_point_temperature_K": 103.989,
+        "min_temperature_K": 103.989,
+        "max_temperature_K": 450.0,
+        "max_pressure_Pa": null
+    },
+    "Acetone": {
+        "name": "Acetone",
+        "molar_mass_kg_mol": 0.05807914,
+        "critical_temperature_K": 508.10000903114974,
+        "critical_pressure_Pa": 4692416.5561745,
+        "triple_point_temperature_K": 178.5,
+        "min_temperature_K": 178.5,
+        "max_temperature_K": 550.0,
+        "max_pressure_Pa": null
+    },
+    "R236FA": {
+        "name": "R236FA",
+        "molar_mass_kg_mol": 0.1520384,
+        "critical_temperature_K": 398.070051605231,
+        "critical_pressure_Pa": 3190869.4221206713,
+        "triple_point_temperature_K": 179.60000000000002,
+        "min_temperature_K": 179.60000000000002,
+        "max_temperature_K": 400.0,
+        "max_pressure_Pa": null
+    },
+    "OrthoDeuterium": {
+        "name": "OrthoDeuterium",
+        "molar_mass_kg_mol": 0.0040282,
+        "critical_temperature_K": 38.33999906574558,
+        "critical_pressure_Pa": 1679550.2649363957,
+        "triple_point_temperature_K": 18.724,
+        "min_temperature_K": 18.724,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "DimethylCarbonate": {
+        "name": "DimethylCarbonate",
+        "molar_mass_kg_mol": 0.0900779,
+        "critical_temperature_K": 557.0000000185722,
+        "critical_pressure_Pa": 4908754.940663761,
+        "triple_point_temperature_K": 277.06,
+        "min_temperature_K": 277.06,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "R14": {
+        "name": "R14",
+        "molar_mass_kg_mol": 0.0880046,
+        "critical_temperature_K": 227.39622847487033,
+        "critical_pressure_Pa": 3762456.3893696563,
+        "triple_point_temperature_K": 120.0,
+        "min_temperature_K": 120.0,
+        "max_temperature_K": 623.0,
+        "max_pressure_Pa": null
+    },
+    "R11": {
+        "name": "R11",
+        "molar_mass_kg_mol": 0.137368,
+        "critical_temperature_K": 471.1099999985589,
+        "critical_pressure_Pa": 4407637.999963813,
+        "triple_point_temperature_K": 162.68,
+        "min_temperature_K": 162.68,
+        "max_temperature_K": 625.0,
+        "max_pressure_Pa": null
+    },
+    "HydrogenChloride": {
+        "name": "HydrogenChloride",
+        "molar_mass_kg_mol": 0.0364609,
+        "critical_temperature_K": 324.68001279345276,
+        "critical_pressure_Pa": 8313508.923127609,
+        "triple_point_temperature_K": 159.07,
+        "min_temperature_K": 159.07,
+        "max_temperature_K": 670.0,
+        "max_pressure_Pa": null
+    },
+    "Oxygen": {
+        "name": "Oxygen",
+        "molar_mass_kg_mol": 0.0319988,
+        "critical_temperature_K": 154.59938983528554,
+        "critical_pressure_Pa": 5046410.521187217,
+        "triple_point_temperature_K": 54.361000000000004,
+        "min_temperature_K": 54.361000000000004,
+        "max_temperature_K": 2000.0,
+        "max_pressure_Pa": null
+    },
+    "R40": {
+        "name": "R40",
+        "molar_mass_kg_mol": 0.05048752,
+        "critical_temperature_K": 418.62565210586763,
+        "critical_pressure_Pa": 6929002.575398743,
+        "triple_point_temperature_K": 230.0,
+        "min_temperature_K": 230.0,
+        "max_temperature_K": 730.0,
+        "max_pressure_Pa": null
+    },
+    "R1234ze(E)": {
+        "name": "R1234ze(E)",
+        "molar_mass_kg_mol": 0.1140415928,
+        "critical_temperature_K": 382.51300260465183,
+        "critical_pressure_Pa": 3634870.5210620845,
+        "triple_point_temperature_K": 168.62,
+        "min_temperature_K": 168.62,
+        "max_temperature_K": 420.0,
+        "max_pressure_Pa": null
+    },
+    "Fluorine": {
+        "name": "Fluorine",
+        "molar_mass_kg_mol": 0.03799681000000001,
+        "critical_temperature_K": 144.41442754857172,
+        "critical_pressure_Pa": 5239516.518784382,
+        "triple_point_temperature_K": 53.48110000000001,
+        "min_temperature_K": 53.48110000000001,
+        "max_temperature_K": 300.0,
+        "max_pressure_Pa": null
+    },
+    "EthyleneOxide": {
+        "name": "EthyleneOxide",
+        "molar_mass_kg_mol": 0.04405256,
+        "critical_temperature_K": 468.9200076903809,
+        "critical_pressure_Pa": 7304686.9983511865,
+        "triple_point_temperature_K": 160.65,
+        "min_temperature_K": 160.65,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "Propylene": {
+        "name": "Propylene",
+        "molar_mass_kg_mol": 0.04207974,
+        "critical_temperature_K": 364.2110025913478,
+        "critical_pressure_Pa": 4554993.018414999,
+        "triple_point_temperature_K": 87.953,
+        "min_temperature_K": 87.953,
+        "max_temperature_K": 575.0,
+        "max_pressure_Pa": null
+    },
+    "NitrousOxide": {
+        "name": "NitrousOxide",
+        "molar_mass_kg_mol": 0.0440128,
+        "critical_temperature_K": 309.52067823146285,
+        "critical_pressure_Pa": 7244816.70160716,
+        "triple_point_temperature_K": 182.33,
+        "min_temperature_K": 182.33,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "SulfurHexafluoride": {
+        "name": "SulfurHexafluoride",
+        "molar_mass_kg_mol": 0.1460554192,
+        "critical_temperature_K": 318.723199999986,
+        "critical_pressure_Pa": 3754982.9998223544,
+        "triple_point_temperature_K": 223.555,
+        "min_temperature_K": 223.555,
+        "max_temperature_K": 625.0,
+        "max_pressure_Pa": null
+    },
+    "R245ca": {
+        "name": "R245ca",
+        "molar_mass_kg_mol": 0.13404794,
+        "critical_temperature_K": 447.5699955219675,
+        "critical_pressure_Pa": 3940740.1841818695,
+        "triple_point_temperature_K": 196.0,
+        "min_temperature_K": 196.0,
+        "max_temperature_K": 450.0,
+        "max_pressure_Pa": null
+    },
+    "R1132(E)": {
+        "name": "R1132(E)",
+        "molar_mass_kg_mol": 0.064035,
+        "critical_temperature_K": 348.81999999960175,
+        "critical_pressure_Pa": 5173675.75533124,
+        "triple_point_temperature_K": 240.0,
+        "min_temperature_K": 240.0,
+        "max_temperature_K": 400.0,
+        "max_pressure_Pa": null
+    },
+    "n-Butane": {
+        "name": "n-Butane",
+        "molar_mass_kg_mol": 0.0581222,
+        "critical_temperature_K": 425.125000000008,
+        "critical_pressure_Pa": 3796000.0174158094,
+        "triple_point_temperature_K": 134.895,
+        "min_temperature_K": 134.895,
+        "max_temperature_K": 575.0,
+        "max_pressure_Pa": null
+    },
+    "D5": {
+        "name": "D5",
+        "molar_mass_kg_mol": 0.3707697,
+        "critical_temperature_K": 618.2999915047726,
+        "critical_pressure_Pa": 1077687.644266743,
+        "triple_point_temperature_K": 226.0,
+        "min_temperature_K": 226.0,
+        "max_temperature_K": 630.0,
+        "max_pressure_Pa": null
+    },
+    "Isopentane": {
+        "name": "Isopentane",
+        "molar_mass_kg_mol": 0.07214878,
+        "critical_temperature_K": 460.3497947114459,
+        "critical_pressure_Pa": 3378217.2241799296,
+        "triple_point_temperature_K": 112.65,
+        "min_temperature_K": 112.65,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "Tetrahydrofuran": {
+        "name": "Tetrahydrofuran",
+        "molar_mass_kg_mol": 0.07210572,
+        "critical_temperature_K": 540.1999999999915,
+        "critical_pressure_Pa": 5304435.306015896,
+        "triple_point_temperature_K": 164.76,
+        "min_temperature_K": 164.76,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "R1336mzz(E)": {
+        "name": "R1336mzz(E)",
+        "molar_mass_kg_mol": 0.1640491,
+        "critical_temperature_K": 403.5300000000283,
+        "critical_pressure_Pa": 2779002.2154943296,
+        "triple_point_temperature_K": 200.15,
+        "min_temperature_K": 200.15,
+        "max_temperature_K": 410.0,
+        "max_pressure_Pa": null
+    },
+    "Krypton": {
+        "name": "Krypton",
+        "molar_mass_kg_mol": 0.083798,
+        "critical_temperature_K": 209.47955179735771,
+        "critical_pressure_Pa": 5525432.47699568,
+        "triple_point_temperature_K": 115.77,
+        "min_temperature_K": 115.77,
+        "max_temperature_K": 750.0,
+        "max_pressure_Pa": null
+    },
+    "m-Xylene": {
+        "name": "m-Xylene",
+        "molar_mass_kg_mol": 0.106165,
+        "critical_temperature_K": 616.890000360268,
+        "critical_pressure_Pa": 3534599.0782215013,
+        "triple_point_temperature_K": 225.3,
+        "min_temperature_K": 225.3,
+        "max_temperature_K": 700.0,
+        "max_pressure_Pa": null
+    },
+    "MethylStearate": {
+        "name": "MethylStearate",
+        "molar_mass_kg_mol": 0.29850382,
+        "critical_temperature_K": 774.9999859700342,
+        "critical_pressure_Pa": 1238999.0559297476,
+        "triple_point_temperature_K": 311.84000000000003,
+        "min_temperature_K": 311.84000000000003,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "R134a": {
+        "name": "R134a",
+        "molar_mass_kg_mol": 0.102032,
+        "critical_temperature_K": 374.2119665849513,
+        "critical_pressure_Pa": 4059276.3737910665,
+        "triple_point_temperature_K": 169.85,
+        "min_temperature_K": 169.85,
+        "max_temperature_K": 455.0,
+        "max_pressure_Pa": null
+    },
+    "MethylLinolenate": {
+        "name": "MethylLinolenate",
+        "molar_mass_kg_mol": 0.29245618,
+        "critical_temperature_K": 772.0000022320153,
+        "critical_pressure_Pa": 1368997.256542253,
+        "triple_point_temperature_K": 260.0,
+        "min_temperature_K": 260.0,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "Isohexane": {
+        "name": "Isohexane",
+        "molar_mass_kg_mol": 0.08617535999999999,
+        "critical_temperature_K": 497.70089775111575,
+        "critical_pressure_Pa": 3042658.694875517,
+        "triple_point_temperature_K": 119.6,
+        "min_temperature_K": 119.6,
+        "max_temperature_K": 550.0,
+        "max_pressure_Pa": null
+    },
+    "trans-2-Butene": {
+        "name": "trans-2-Butene",
+        "molar_mass_kg_mol": 0.05610631999999999,
+        "critical_temperature_K": 428.61053576550944,
+        "critical_pressure_Pa": 4019095.037933443,
+        "triple_point_temperature_K": 167.60000000000002,
+        "min_temperature_K": 167.60000000000002,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "MDM": {
+        "name": "MDM",
+        "molar_mass_kg_mol": 0.23653146,
+        "critical_temperature_K": 565.3609009312738,
+        "critical_pressure_Pa": 1437537.7755043951,
+        "triple_point_temperature_K": 187.2,
+        "min_temperature_K": 187.2,
+        "max_temperature_K": 575.0,
+        "max_pressure_Pa": null
+    },
+    "Benzene": {
+        "name": "Benzene",
+        "molar_mass_kg_mol": 0.07811180000000001,
+        "critical_temperature_K": 562.0196911219722,
+        "critical_pressure_Pa": 4906288.781088226,
+        "triple_point_temperature_K": 278.674,
+        "min_temperature_K": 278.674,
+        "max_temperature_K": 725.0,
+        "max_pressure_Pa": null
+    },
+    "Helium": {
+        "name": "Helium",
+        "molar_mass_kg_mol": 0.004002602,
+        "critical_temperature_K": 5.195300013635951,
+        "critical_pressure_Pa": 228322.7892147868,
+        "triple_point_temperature_K": 2.1768,
+        "min_temperature_K": 2.1768,
+        "max_temperature_K": 2000.0,
+        "max_pressure_Pa": null
+    },
+    "R1123": {
+        "name": "R1123",
+        "molar_mass_kg_mol": 0.08202455,
+        "critical_temperature_K": 331.72998477335267,
+        "critical_pressure_Pa": 4548776.684679004,
+        "triple_point_temperature_K": 195.15,
+        "min_temperature_K": 195.15,
+        "max_temperature_K": 480.0,
+        "max_pressure_Pa": null
+    },
+    "R115": {
+        "name": "R115",
+        "molar_mass_kg_mol": 0.154466416,
+        "critical_temperature_K": 353.1019775386571,
+        "critical_pressure_Pa": 3129170.8491095616,
+        "triple_point_temperature_K": 173.57,
+        "min_temperature_K": 173.57,
+        "max_temperature_K": 550.0,
+        "max_pressure_Pa": null
+    },
+    "R404A": {
+        "name": "R404A",
+        "molar_mass_kg_mol": 0.0976038,
+        "critical_temperature_K": 345.27,
+        "critical_pressure_Pa": 3734800.0,
+        "triple_point_temperature_K": 200.0,
+        "min_temperature_K": 200.0,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "IsoButane": {
+        "name": "IsoButane",
+        "molar_mass_kg_mol": 0.0581222,
+        "critical_temperature_K": 407.8100000000046,
+        "critical_pressure_Pa": 3629000.0166496336,
+        "triple_point_temperature_K": 113.73,
+        "min_temperature_K": 113.73,
+        "max_temperature_K": 575.0,
+        "max_pressure_Pa": null
+    },
+    "MethylPalmitate": {
+        "name": "MethylPalmitate",
+        "molar_mass_kg_mol": 0.27045066,
+        "critical_temperature_K": 755.0001061380809,
+        "critical_pressure_Pa": 1349957.890312988,
+        "triple_point_temperature_K": 302.71,
+        "min_temperature_K": 302.71,
+        "max_temperature_K": 1000.0,
+        "max_pressure_Pa": null
+    },
+    "Xenon": {
+        "name": "Xenon",
+        "molar_mass_kg_mol": 0.131293,
+        "critical_temperature_K": 289.7325683307143,
+        "critical_pressure_Pa": 5841913.640364157,
+        "triple_point_temperature_K": 161.4,
+        "min_temperature_K": 161.4,
+        "max_temperature_K": 750.0,
+        "max_pressure_Pa": null
+    },
+    "Ethanol": {
+        "name": "Ethanol",
+        "molar_mass_kg_mol": 0.04606844,
+        "critical_temperature_K": 514.7092848812961,
+        "critical_pressure_Pa": 6267914.582702095,
+        "triple_point_temperature_K": 159.10000000000002,
+        "min_temperature_K": 159.10000000000002,
+        "max_temperature_K": 650.0,
+        "max_pressure_Pa": null
+    },
+    "n-Nonane": {
+        "name": "n-Nonane",
+        "molar_mass_kg_mol": 0.1282551,
+        "critical_temperature_K": 594.5478132119172,
+        "critical_pressure_Pa": 2281911.0314392075,
+        "triple_point_temperature_K": 219.7,
+        "min_temperature_K": 219.7,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "Chlorine": {
+        "name": "Chlorine",
+        "molar_mass_kg_mol": 0.070906,
+        "critical_temperature_K": 416.86540489574804,
+        "critical_pressure_Pa": 7642373.889805882,
+        "triple_point_temperature_K": 172.1712,
+        "min_temperature_K": 172.1712,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "R23": {
+        "name": "R23",
+        "molar_mass_kg_mol": 0.07001385,
+        "critical_temperature_K": 299.2930489716731,
+        "critical_pressure_Pa": 4831745.104997237,
+        "triple_point_temperature_K": 118.02,
+        "min_temperature_K": 118.02,
+        "max_temperature_K": 475.0,
+        "max_pressure_Pa": null
+    },
+    "R1234ze(Z)": {
+        "name": "R1234ze(Z)",
+        "molar_mass_kg_mol": 0.1140416,
+        "critical_temperature_K": 423.2703783954189,
+        "critical_pressure_Pa": 3530642.6307265745,
+        "triple_point_temperature_K": 273.0,
+        "min_temperature_K": 273.0,
+        "max_temperature_K": 440.0,
+        "max_pressure_Pa": null
+    },
+    "Deuterium": {
+        "name": "Deuterium",
+        "molar_mass_kg_mol": 0.0040282,
+        "critical_temperature_K": 38.33999906574558,
+        "critical_pressure_Pa": 1679550.2649363957,
+        "triple_point_temperature_K": 18.724,
+        "min_temperature_K": 18.724,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "HeavyWater": {
+        "name": "HeavyWater",
+        "molar_mass_kg_mol": 0.020027508,
+        "critical_temperature_K": 643.8469999831403,
+        "critical_pressure_Pa": 21661830.99818297,
+        "triple_point_temperature_K": 276.969,
+        "min_temperature_K": 276.969,
+        "max_temperature_K": 825.0,
+        "max_pressure_Pa": null
+    },
+    "R1130(E)": {
+        "name": "R1130(E)",
+        "molar_mass_kg_mol": 0.09694328,
+        "critical_temperature_K": 515.6899999994398,
+        "critical_pressure_Pa": 5255464.179263995,
+        "triple_point_temperature_K": 223.31,
+        "min_temperature_K": 223.31,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "MD2M": {
+        "name": "MD2M",
+        "molar_mass_kg_mol": 0.3106854,
+        "critical_temperature_K": 599.3992011721302,
+        "critical_pressure_Pa": 1144009.0031759262,
+        "triple_point_temperature_K": 205.2,
+        "min_temperature_K": 205.2,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "Water": {
+        "name": "Water",
+        "molar_mass_kg_mol": 0.018015268,
+        "critical_temperature_K": 647.0959999999873,
+        "critical_pressure_Pa": 22063999.999997754,
+        "triple_point_temperature_K": 273.16,
+        "min_temperature_K": 273.16,
+        "max_temperature_K": 2000.0,
+        "max_pressure_Pa": null
+    },
+    "Methanol": {
+        "name": "Methanol",
+        "molar_mass_kg_mol": 0.03204216,
+        "critical_temperature_K": 513.3795127230579,
+        "critical_pressure_Pa": 8215853.274947686,
+        "triple_point_temperature_K": 175.61,
+        "min_temperature_K": 175.61,
+        "max_temperature_K": 620.0,
+        "max_pressure_Pa": null
+    },
+    "n-Heptane": {
+        "name": "n-Heptane",
+        "molar_mass_kg_mol": 0.100202,
+        "critical_temperature_K": 541.2259150893126,
+        "critical_pressure_Pa": 2773824.280294774,
+        "triple_point_temperature_K": 182.55,
+        "min_temperature_K": 182.55,
+        "max_temperature_K": 600.0,
+        "max_pressure_Pa": null
+    },
+    "R407C": {
+        "name": "R407C",
+        "molar_mass_kg_mol": 0.08620359999999999,
+        "critical_temperature_K": 359.345,
+        "critical_pressure_Pa": 4631700.0,
+        "triple_point_temperature_K": 200.0,
+        "min_temperature_K": 200.0,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "Propyne": {
+        "name": "Propyne",
+        "molar_mass_kg_mol": 0.04006000000000001,
+        "critical_temperature_K": 402.70114427694375,
+        "critical_pressure_Pa": 5657503.317136208,
+        "triple_point_temperature_K": 273.0,
+        "min_temperature_K": 273.0,
+        "max_temperature_K": 474.0,
+        "max_pressure_Pa": null
+    },
+    "R114": {
+        "name": "R114",
+        "molar_mass_kg_mol": 0.170921,
+        "critical_temperature_K": 420.6077250633603,
+        "critical_pressure_Pa": 3352482.0281048496,
+        "triple_point_temperature_K": 273.15000000000003,
+        "min_temperature_K": 273.15000000000003,
+        "max_temperature_K": 507.0,
+        "max_pressure_Pa": null
+    },
+    "R236EA": {
+        "name": "R236EA",
+        "molar_mass_kg_mol": 0.1520384,
+        "critical_temperature_K": 412.4089900338652,
+        "critical_pressure_Pa": 3413692.778348532,
+        "triple_point_temperature_K": 243.0,
+        "min_temperature_K": 243.0,
+        "max_temperature_K": 412.0,
+        "max_pressure_Pa": null
+    },
+    "SulfurDioxide": {
+        "name": "SulfurDioxide",
+        "molar_mass_kg_mol": 0.0640638,
+        "critical_temperature_K": 430.6400006320635,
+        "critical_pressure_Pa": 7886578.976938645,
+        "triple_point_temperature_K": 197.7,
+        "min_temperature_K": 197.7,
+        "max_temperature_K": 525.0,
+        "max_pressure_Pa": null
+    },
+    "CarbonDioxide": {
+        "name": "CarbonDioxide",
+        "molar_mass_kg_mol": 0.0440098,
+        "critical_temperature_K": 304.1282000029807,
+        "critical_pressure_Pa": 7377298.373446752,
+        "triple_point_temperature_K": 216.592,
+        "min_temperature_K": 216.592,
+        "max_temperature_K": 2000.0,
+        "max_pressure_Pa": null
+    },
+    "EthylBenzene": {
+        "name": "EthylBenzene",
+        "molar_mass_kg_mol": 0.106165,
+        "critical_temperature_K": 617.1199997949194,
+        "critical_pressure_Pa": 3622442.1281439885,
+        "triple_point_temperature_K": 178.20000000000002,
+        "min_temperature_K": 178.20000000000002,
+        "max_temperature_K": 700.0,
+        "max_pressure_Pa": null
+    },
+    "Argon": {
+        "name": "Argon",
+        "molar_mass_kg_mol": 0.039948,
+        "critical_temperature_K": 150.68700000001058,
+        "critical_pressure_Pa": 4863000.544876669,
+        "triple_point_temperature_K": 83.806,
+        "min_temperature_K": 83.806,
+        "max_temperature_K": 2000.0,
+        "max_pressure_Pa": null
+    },
+    "R116": {
+        "name": "R116",
+        "molar_mass_kg_mol": 0.13801182,
+        "critical_temperature_K": 293.029792782695,
+        "critical_pressure_Pa": 3047660.186268071,
+        "triple_point_temperature_K": 173.10000000000002,
+        "min_temperature_K": 173.10000000000002,
+        "max_temperature_K": 425.0,
+        "max_pressure_Pa": null
+    },
+    "R152A": {
+        "name": "R152A",
+        "molar_mass_kg_mol": 0.066051,
+        "critical_temperature_K": 386.4109977772107,
+        "critical_pressure_Pa": 4516749.941044954,
+        "triple_point_temperature_K": 154.56,
+        "min_temperature_K": 154.56,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "MD4M": {
+        "name": "MD4M",
+        "molar_mass_kg_mol": 0.45899328,
+        "critical_temperature_K": 653.199999427594,
+        "critical_pressure_Pa": 828558.7151384281,
+        "triple_point_temperature_K": 214.15,
+        "min_temperature_K": 214.15,
+        "max_temperature_K": 655.0,
+        "max_pressure_Pa": null
+    },
+    "Methane": {
+        "name": "Methane",
+        "molar_mass_kg_mol": 0.0160428,
+        "critical_temperature_K": 190.56400265128698,
+        "critical_pressure_Pa": 4599200.474282439,
+        "triple_point_temperature_K": 90.6941,
+        "min_temperature_K": 90.6941,
+        "max_temperature_K": 625.0,
+        "max_pressure_Pa": null
+    },
+    "R125": {
+        "name": "R125",
+        "molar_mass_kg_mol": 0.1200214,
+        "critical_temperature_K": 339.1772824561048,
+        "critical_pressure_Pa": 3618276.0556197306,
+        "triple_point_temperature_K": 172.52,
+        "min_temperature_K": 172.52,
+        "max_temperature_K": 500.0,
+        "max_pressure_Pa": null
+    },
+    "n-Undecane": {
+        "name": "n-Undecane",
+        "molar_mass_kg_mol": 0.15630826,
+        "critical_temperature_K": 638.8000144673849,
+        "critical_pressure_Pa": 1990452.1527680526,
+        "triple_point_temperature_K": 247.541,
+        "min_temperature_K": 247.541,
+        "max_temperature_K": 700.0,
+        "max_pressure_Pa": null
+    }
+}
