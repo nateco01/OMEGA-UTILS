@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ω OMEGA Utils — Painel Científico</title>
+    <meta name="description" content="Interface visual do OMEGA Utils: integrais, derivadas, equações, funções, teoremas vetoriais, Monte Carlo, estruturas, compósitos, matrizes, constantes, elementos e escoamento Venturi.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Ω</text></svg>">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/omega.css') }}">
+</head>
+<body>
+
+<div class="camada-fundo" aria-hidden="true"></div>
+
+<header class="topbar">
+    <a class="brand" href="/">
+        <span class="omega">Ω</span>
+        <span>
+            <span class="titulo">OMEGA Utils</span><br>
+            <span class="subtitulo">painel científico</span>
+        </span>
+    </a>
+    <span class="espaco"></span>
+    <span class="pill-status"><span class="ponto"></span>{{ modulos|selectattr(2)|list|length }} de {{ modulos|length }} módulos ativos</span>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Ferramentas matemáticas &amp; físicas, com gráficos instantâneos.</h1>
+        <p>Clique em um cartão para abrir a ferramenta, preencha os campos e veja o resultado
+           calculado pelos solvers do <strong>OMEGA Utils</strong>, com visualização desenhada na hora.
+           Expressões aceitam <code>sin, cos, tan, exp, log, sqrt, abs, pi, e</code> e potência com <code>^</code>.</p>
+        <div class="badges">
+            <span class="badge destaque">Python + Flask</span>
+            <span class="badge">NumPy</span>
+            <span class="badge">Canvas sem dependências externas</span>
+            <span class="badge">{{ modulos|selectattr(2)|list|length }}/{{ modulos|length }} módulos disponíveis</span>
+        </div>
+        {% for aviso in avisos %}
+        <div class="aviso-global">ℹ️ {{ aviso }}</div>
+        {% endfor %}
+    </section>
+
+    <section class="grade-ferramentas">
+
+        {# ---------------- INTEGRAIS ---------------- #}
+        <article id="integrais" class="ferramenta{{ '' if modulos[0][2] else ' indisponivel' }}" style="--cor-modulo:#7c9aff">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">∫</span>
+                <div>
+                    <h2>Integrais</h2>
+                    <div class="descricao">Definidas por métodos numéricos e integrais de linha</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <div class="abas">
+                    <button type="button" class="aba ativa" data-aba="numerica">Numerica</button>
+                    <button type="button" class="aba" data-aba="linha">Linha ∫F·dr</button>
+                </div>
+
+                <div class="painel-aba ativa" data-painel="numerica">
+                    <form data-api="/api/integral/numerica" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="int-funcao">Função f(x)</label>
+                                <input id="int-funcao" class="codigo" type="text" name="funcao" value="sin(x)^2" placeholder="ex.: exp(-x^2)" required>
+                                <span class="dica">Variável: x · use ^ para potência, pi e e como constantes.</span>
+                            </div>
+                            <div class="campo">
+                                <label for="int-a">Limite inferior a</label>
+                                <input id="int-a" type="number" step="any" name="a" value="0" required>
+                            </div>
+                            <div class="campo">
+                                <label for="int-b">Limite superior b</label>
+                                <input id="int-b" type="number" step="any" name="b" value="3.141592653589793" required>
+                            </div>
+                            <div class="campo">
+                                <label for="int-metodo">Método</label>
+                                <select id="int-metodo" name="metodo">
+                                    <option value="simpson">Simpson 1/3 composta</option>
+                                    <option value="trapezio">Trapézio composta</option>
+                                    <option value="adaptativa">Simpson adaptativa</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="int-n">Subintervalos n</label>
+                                <input id="int-n" type="number" min="2" step="1" name="n" value="1000">
+                            </div>
+                        </div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Calcular integral</button>
+                            <span class="dica">Simpson exige n par (ajustado automaticamente).</span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="linha">
+                    <form data-api="/api/integral/linha" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo">
+                                <label for="il-px">Fx (componente x do campo)</label>
+                                <input id="il-px" class="codigo" type="text" name="px" value="-y0" placeholder="em função de t">
+                            </div>
+                            <div class="campo">
+                                <label for="il-py">Fy (componente y do campo)</label>
+                                <input id="il-py" class="codigo" type="text" name="py" value="x0">
+                            </div>
+                            <div class="campo">
+                                <label for="il-cx">Cx — curva x(t)</label>
+                                <input id="il-cx" class="codigo" type="text" name="cx" value="cos(t)" required>
+                            </div>
+                            <div class="campo">
+                                <label for="il-cy">Cy — curva y(t)</label>
+                                <input id="il-cy" class="codigo" type="text" name="cy" value="sin(t)" required>
+                            </div>
+                            <div class="campo">
+                                <label for="il-t0">t inicial</label>
+                                <input id="il-t0" type="number" step="any" name="t0" value="0" required>
+                            </div>
+                            <div class="campo">
+                                <label for="il-t1">t final</label>
+                                <input id="il-t1" type="number" step="any" name="t1" value="6.283185307179586" required>
+                            </div>
+                        </div>
+                        <div class="dica">O campo F é avaliado sobre a curva r(t) = (Cx(t), Cy(t)); as expressões de Fx/Fy podem usar x0, y0 (coordenadas no ponto da curva) e t.</div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Calcular ∫ F·dr</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+
+        {# ---------------- DERIVADAS ---------------- #}
+        <article id="derivadas" class="ferramenta{{ '' if modulos[1][2] else ' indisponivel' }}" style="--cor-modulo:#b07cff">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">d/dx</span>
+                <div>
+                    <h2>Derivadas</h2>
+                    <div class="descricao">Diferenciação numérica e reta tangente</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <form autocomplete="off">
+                    <div class="form-grade">
+                        <div class="campo largo">
+                            <label for="der-funcao">Função f(x)</label>
+                            <input id="der-funcao" class="codigo" type="text" name="funcao" value="x^3 - 3*x" placeholder="ex.: x*sin(x)" required>
+                        </div>
+                        <div class="campo">
+                            <label for="der-ponto">Ponto x₀</label>
+                            <input id="der-ponto" type="number" step="any" name="ponto" value="1.5" required>
+                        </div>
+                        <div class="campo">
+                            <label for="der-h">Passo h</label>
+                            <input id="der-h" type="number" step="any" name="h" value="1e-5">
+                            <span class="dica">Fórmula de 5 pontos.</span>
+                        </div>
+                    </div>
+                    <div class="linha-acoes">
+                        <button type="submit" class="botao">Derivar</button>
+                        <span class="dica">Compara fórmulas progressiva e centralizada e desenha a tangente.</span>
+                    </div>
+                </form>
+            </div>
+        </article>
+
+        {# ---------------- EQUAÇÕES & FÍSICA ---------------- #}
+        <article id="equacoes" class="ferramenta{{ '' if modulos[2][2] else ' indisponivel' }}" style="--cor-modulo:#3fd6c6">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">=</span>
+                <div>
+                    <h2>Equações &amp; Física</h2>
+                    <div class="descricao">Grau 2, cinemática MRV e EDOs por Runge–Kutta</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <div class="abas">
+                    <button type="button" class="aba ativa" data-aba="grau2">Equação 2º grau</button>
+                    <button type="button" class="aba" data-aba="mrv">MRV</button>
+                    <button type="button" class="aba" data-aba="rk4">EDO · RK4</button>
+                </div>
+
+                <div class="painel-aba ativa" data-painel="grau2">
+                    <form data-api="/api/equacao/grau2" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo">
+                                <label for="g2-a">a</label>
+                                <input id="g2-a" type="number" step="any" name="a" value="1" required>
+                            </div>
+                            <div class="campo">
+                                <label for="g2-b">b</label>
+                                <input id="g2-b" type="number" step="any" name="b" value="-3" required>
+                            </div>
+                            <div class="campo">
+                                <label for="g2-c">c</label>
+                                <input id="g2-c" type="number" step="any" name="c" value="-4" required>
+                            </div>
+                        </div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Resolver ax² + bx + c = 0</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="mrv">
+                    <form data-api="/api/fisica/mrv" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo">
+                                <label for="mrv-s0">S₀ (m)</label>
+                                <input id="mrv-s0" type="number" step="any" name="s0" value="0">
+                            </div>
+                            <div class="campo">
+                                <label for="mrv-v0">v₀ (m/s)</label>
+                                <input id="mrv-v0" type="number" step="any" name="v0" value="5" required>
+                            </div>
+                            <div class="campo">
+                                <label for="mrv-a">a (m/s²)</label>
+                                <input id="mrv-a" type="number" step="any" name="a" value="2" required>
+                            </div>
+                            <div class="campo">
+                                <label for="mrv-t">t (s)</label>
+                                <input id="mrv-t" type="number" step="any" min="0.01" name="t" value="10" required>
+                            </div>
+                        </div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Simular movimento</button>
+                            <span class="dica">S(t) = S₀ + v₀t + at²/2, com gráficos de posição e velocidade.</span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="rk4">
+                    <form data-api="/api/edo/rk4" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="rk4-dydt">y′ = f(t, y)</label>
+                                <input id="rk4-dydt" class="codigo" type="text" name="dydt" value="-2*y" placeholder="ex.: t*y ou sin(t) - y" required>
+                                <span class="dica">Variáveis disponíveis: t e y.</span>
+                            </div>
+                            <div class="campo">
+                                <label for="rk4-y0">y(t₀)</label>
+                                <input id="rk4-y0" type="number" step="any" name="y0" value="1">
+                            </div>
+                            <div class="campo">
+                                <label for="rk4-t0">t₀</label>
+                                <input id="rk4-t0" type="number" step="any" name="t0" value="0">
+                            </div>
+                            <div class="campo">
+                                <label for="rk4-h">passo h</label>
+                                <input id="rk4-h" type="number" step="any" name="h" value="0.1">
+                            </div>
+                            <div class="campo">
+                                <label for="rk4-passos">nº de passos</label>
+                                <input id="rk4-passos" type="number" min="1" max="5000" step="1" name="passos" value="50">
+                            </div>
+                        </div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Integrar com RK4</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+
+        {# ---------------- FUNÇÕES & RAÍZES ---------------- #}
+        <article id="funcoes" class="ferramenta{{ '' if modulos[3][2] else ' indisponivel' }}" style="--cor-modulo:#ffc46b">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">√x</span>
+                <div>
+                    <h2>Funções &amp; Raízes</h2>
+                    <div class="descricao">Bisseção, Newton–Raphson, polinômios e limites</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <div class="abas">
+                    <button type="button" class="aba ativa" data-aba="bissecao">Bisseção</button>
+                    <button type="button" class="aba" data-aba="newton">Newton</button>
+                    <button type="button" class="aba" data-aba="poli">Polinômio</button>
+                    <button type="button" class="aba" data-aba="limite">Limite</button>
+                </div>
+
+                <div class="painel-aba ativa" data-painel="bissecao">
+                    <form data-api="/api/raiz/bissecao" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="bis-funcao">f(x)</label>
+                                <input id="bis-funcao" class="codigo" type="text" name="funcao" value="x^3 - x - 2" required>
+                                <span class="dica">É preciso que f(a) e f(b) tenham sinais opostos.</span>
+                            </div>
+                            <div class="campo">
+                                <label for="bis-a">extremo a</label>
+                                <input id="bis-a" type="number" step="any" name="a" value="1" required>
+                            </div>
+                            <div class="campo">
+                                <label for="bis-b">extremo b</label>
+                                <input id="bis-b" type="number" step="any" name="b" value="4" required>
+                            </div>
+                            <div class="campo">
+                                <label for="bis-n">iterações</label>
+                                <input id="bis-n" type="number" min="1" max="500" step="1" name="n" value="60">
+                            </div>
+                            <div class="campo">
+                                <label for="bis-tol">tolerância</label>
+                                <input id="bis-tol" type="text" name="tol" value="1e-8">
+                            </div>
+                        </div>
+                        <div class="linha-acoes"><button type="submit" class="botao">Procurar raiz</button></div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="newton">
+                    <form data-api="/api/raiz/newton" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="neu-funcao">f(x)</label>
+                                <input id="neu-funcao" class="codigo" type="text" name="funcao" value="cos(x) - x" required>
+                                <span class="dica">A derivada f′ é estimada numericamente pelo OMEGA.</span>
+                            </div>
+                            <div class="campo">
+                                <label for="neu-x0">chute x₀</label>
+                                <input id="neu-x0" type="number" step="any" name="x0" value="1" required>
+                            </div>
+                            <div class="campo">
+                                <label for="neu-tol">tolerância</label>
+                                <input id="neu-tol" type="text" name="tol" value="1e-7">
+                            </div>
+                            <div class="campo">
+                                <label for="neu-max">iterações máx.</label>
+                                <input id="neu-max" type="number" min="1" max="1000" step="1" name="max_iter" value="100">
+                            </div>
+                        </div>
+                        <div class="linha-acoes"><button type="submit" class="botao">Iterar Newton–Raphson</button></div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="poli">
+                    <form data-api="/api/polimonio" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="pol-coef">Coeficientes [aₙ, …, a₁, a₀]</label>
+                                <input id="pol-coef" class="codigo" type="text" name="coeficientes" value="[1, -1, -2, 1]" required>
+                                <span class="dica">Grau 1 a 4, ordem decrescente. Ex.: x³−x²−2x+1 → [1,-1,-2,1].</span>
+                            </div>
+                        </div>
+                        <div class="linha-acoes"><button type="submit" class="botao">Encontrar raízes</button></div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="limite">
+                    <form data-api="/api/limite" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="lim-funcao">f(x)</label>
+                                <input id="lim-funcao" class="codigo" type="text" name="funcao" value="sin(x)/x" required>
+                            </div>
+                            <div class="campo">
+                                <label for="lim-ponto">x₀</label>
+                                <input id="lim-ponto" type="number" step="any" name="ponto" value="0" required>
+                            </div>
+                            <div class="campo">
+                                <label for="lim-direcao">Direção</label>
+                                <select id="lim-direcao" name="direcao">
+                                    <option value="ambos">dos dois lados</option>
+                                    <option value="direita">pela direita</option>
+                                    <option value="esquerda">pela esquerda</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Estimar limite</button>
+                            <span class="dica">Ex.: sin(x)/x → 1 quando x → 0.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+
+        {# ---------------- TEOREMAS VETORIAIS ---------------- #}
+        <article id="teoremas" class="ferramenta{{ '' if modulos[4][2] else ' indisponivel' }}" style="--cor-modulo:#ff7ca8">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">∮</span>
+                <div>
+                    <h2>Teoremas Vetoriais</h2>
+                    <div class="descricao">Validação numérica do Teorema de Green</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <form autocomplete="off">
+                    <div class="form-grade">
+                        <div class="campo">
+                            <label for="tg-p">P(x, y)</label>
+                            <input id="tg-p" class="codigo" type="text" name="P" value="-y/2" placeholder="ex.: y">
+                        </div>
+                        <div class="campo">
+                            <label for="tg-q">Q(x, y)</label>
+                            <input id="tg-q" class="codigo" type="text" name="Q" value="x/2" placeholder="ex.: -x">
+                        </div>
+                        <div class="campo">
+                            <label for="tg-cx">Curva x(t)</label>
+                            <input id="tg-cx" class="codigo" type="text" name="cx" value="cos(t)">
+                        </div>
+                        <div class="campo">
+                            <label for="tg-cy">Curva y(t)</label>
+                            <input id="tg-cy" class="codigo" type="text" name="cy" value="sin(t)">
+                        </div>
+                    </div>
+                    <div class="dica">Curva fechada percorrida em t ∈ [0, 2π]; região [-1.5, 1.5]². Com P=−y/2, Q=x/2 o resultado é a área enclosed (≈ π).</div>
+                    <div class="linha-acoes">
+                        <button type="submit" class="botao">Verificar Green</button>
+                    </div>
+                </form>
+            </div>
+        </article>
+
+        {# ---------------- MONTE CARLO ---------------- #}
+        <article id="montecarlo" class="ferramenta{{ '' if modulos[5][2] else ' indisponivel' }}" style="--cor-modulo:#5ee6a8">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">🎲</span>
+                <div>
+                    <h2>Simulação Monte Carlo</h2>
+                    <div class="descricao">Integração probabilística com erro padrão e IC 95%</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <form autocomplete="off">
+                    <div class="form-grade">
+                        <div class="campo largo">
+                            <label for="mc-funcao">f(x)</label>
+                            <input id="mc-funcao" class="codigo" type="text" name="funcao" value="exp(-x^2)" required>
+                        </div>
+                        <div class="campo">
+                            <label for="mc-a">a</label>
+                            <input id="mc-a" type="number" step="any" name="a" value="0" required>
+                        </div>
+                        <div class="campo">
+                            <label for="mc-b">b</label>
+                            <input id="mc-b" type="number" step="any" name="b" value="1" required>
+                        </div>
+                        <div class="campo">
+                            <label for="mc-amostras">amostras</label>
+                            <input id="mc-amostras" type="number" min="100" max="2000000" step="100" name="amostras" value="100000">
+                        </div>
+                        <div class="campo">
+                            <label for="mc-semente">semente (opcional)</label>
+                            <input id="mc-semente" type="number" step="1" name="semente" value="42" placeholder="vazio = aleatório">
+                        </div>
+                    </div>
+                    <div class="linha-acoes">
+                        <button type="submit" class="botao">Sortear &amp; integrar</button>
+                        <span class="dica">Comparado com Simpson (n = 2000) como referência.</span>
+                    </div>
+                </form>
+            </div>
+        </article>
+
+        {# ---------------- ESTRUTURAS ---------------- #}
+        <article id="estruturas" class="ferramenta{{ '' if modulos[6][2] else ' indisponivel' }}" style="--cor-modulo:#9aa7c7">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">⛓</span>
+                <div>
+                    <h2>Análise Estrutural</h2>
+                    <div class="descricao">Flambagem de Euler e mecânica da fratura</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <div class="abas">
+                    <button type="button" class="aba ativa" data-aba="euler">Flambagem Euler</button>
+                    <button type="button" class="aba" data-aba="fratura">Fratura</button>
+                </div>
+
+                <div class="painel-aba ativa" data-painel="euler">
+                    <form data-api="/api/estrutura/euler" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo">
+                                <label for="eu-e">E (GPa)</label>
+                                <input id="eu-e" type="number" step="any" min="0.001" name="modulo" value="200" required>
+                            </div>
+                            <div class="campo">
+                                <label for="eu-i">I (cm⁴)</label>
+                                <input id="eu-i" type="number" step="any" min="0.001" name="inercia" value="80" required>
+                            </div>
+                            <div class="campo">
+                                <label for="eu-l">L (cm)</label>
+                                <input id="eu-l" type="number" step="any" min="0.001" name="comprimento" value="300" required>
+                            </div>
+                            <div class="campo">
+                                <label for="eu-k">K (efetivo)</label>
+                                <input id="eu-k" type="number" step="any" min="0.1" name="k" value="1">
+                                <span class="dica">1 articulado–articulado · 0.5 engastado–livre invertido…</span>
+                            </div>
+                            <div class="campo">
+                                <label for="eu-fs">FS projeto</label>
+                                <input id="eu-fs" type="number" step="any" min="1" name="fs" value="2">
+                            </div>
+                        </div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Calcular Pcr = π²EI/(KL)²</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="fratura">
+                    <form data-api="/api/estrutura/fratura" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo">
+                                <label for="fr-sigma">σ aplicada (MPa)</label>
+                                <input id="fr-sigma" type="number" step="any" min="0.001" name="tensao" value="200" required>
+                            </div>
+                            <div class="campo">
+                                <label for="fr-kic">K_IC (MPa·√m)</label>
+                                <input id="fr-kic" type="number" step="any" min="0.001" name="kic" value="50" required>
+                            </div>
+                            <div class="campo">
+                                <label for="fr-y">Fator Y</label>
+                                <input id="fr-y" type="number" step="any" min="0.1" name="y" value="1">
+                            </div>
+                        </div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Trinca crítica a_c</button>
+                            <span class="dica">a_c = (K_IC / (Y·σ))² / π.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+
+        {# ---------------- MATERIAIS ---------------- #}
+        <article id="materiais" class="ferramenta{{ '' if modulos[7][2] else ' indisponivel' }}" style="--cor-modulo:#7ce6d6">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">≡</span>
+                <div>
+                    <h2>Materiais Compósitos</h2>
+                    <div class="descricao">Laminado ortotrópio pela teoria clássica (CLT)</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <form autocomplete="off">
+                    <div class="form-grade">
+                        <div class="campo largo">
+                            <label for="mat-angulos">Ângulos das camadas (graus)</label>
+                            <input id="mat-angulos" class="codigo" type="text" name="angulos" value="[0, 90, 0]" required>
+                            <span class="dica">Lista na ordem empilhada, ex.: [0, 90, 0] ou [45, -45, -45, 45].</span>
+                        </div>
+                        <div class="campo">
+                            <label for="mat-e1">E1 (G)</label>
+                            <input id="mat-e1" type="text" name="e1" value="140G">
+                        </div>
+                        <div class="campo">
+                            <label for="mat-e2">E2 (G)</label>
+                            <input id="mat-e2" type="text" name="e2" value="10G">
+                        </div>
+                        <div class="campo">
+                            <label for="mat-g12">G12 (G)</label>
+                            <input id="mat-g12" type="text" name="g12" value="7G">
+                        </div>
+                        <div class="campo">
+                            <label for="mat-nu12">ν12</label>
+                            <input id="mat-nu12" type="number" step="any" name="nu12" value="0.3">
+                        </div>
+                        <div class="campo">
+                            <label for="mat-esp">espessura/camada (m)</label>
+                            <input id="mat-esp" type="number" step="any" min="1e-6" name="espessura" value="0.00015">
+                        </div>
+                        <div class="campo">
+                            <label for="mat-nx">Nx (N/m, aceita sufixo G)</label>
+                            <input id="mat-nx" type="text" name="nx" value="1e6">
+                        </div>
+                    </div>
+                    <details class="dica" style="margin-top:8px">
+                        <summary>Propriedades de resistência (opcional, em Pa ou sufixo G)</summary>
+                        <div class="form-grade">
+                            <div class="campo"><label for="mat-xt">Xt</label><input id="mat-xt" type="text" name="xt" value="1.5G"></div>
+                            <div class="campo"><label for="mat-xc">Xc</label><input id="mat-xc" type="text" name="xc" value="1.2G"></div>
+                            <div class="campo"><label for="mat-yt">Yt</label><input id="mat-yt" type="text" name="yt" value="0.05G"></div>
+                            <div class="campo"><label for="mat-yc">Yc</label><input id="mat-yc" type="text" name="yc" value="0.2G"></div>
+                            <div class="campo"><label for="mat-s">S</label><input id="mat-s" type="text" name="s" value="0.07G"></div>
+                            <div class="campo"><label for="mat-a1">α1 (/K)</label><input id="mat-a1" type="text" name="alpha1" value="0"></div>
+                            <div class="campo"><label for="mat-a2">α2 (/K)</label><input id="mat-a2" type="text" name="alpha2" value="22.5e-6"></div>
+                        </div>
+                    </details>
+                    <div class="linha-acoes">
+                        <button type="submit" class="botao">Analisar laminado</button>
+                        <span class="dica">Matrizes A, B, D + deformações e tensões por camada.</span>
+                    </div>
+                </form>
+            </div>
+        </article>
+
+        {# ---------------- MATRIZES ---------------- #}
+        <article id="matrizes" class="ferramenta{{ '' if modulos[8][2] else ' indisponivel' }}" style="--cor-modulo:#c0a6ff">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">▦</span>
+                <div>
+                    <h2>Álgebra Linear (Matrizes)</h2>
+                    <div class="descricao">Determinante, inversa e Gauss–Jordan</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <div class="abas">
+                    <button type="button" class="aba ativa" data-aba="det">det(A)</button>
+                    <button type="button" class="aba" data-aba="inv">A⁻¹</button>
+                    <button type="button" class="aba" data-aba="sys">Ax = b</button>
+                </div>
+
+                <div class="painel-aba ativa" data-painel="det">
+                    <form data-api="/api/matriz/determinante" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="det-a">Matriz A</label>
+                                <input id="det-a" class="codigo" type="text" name="matriz" value="[[2,1,-3],[1,5,2],[-2,3,-1]]" required>
+                                <span class="dica">Aceita [[1,2],[3,4]] ou [1,2;3,4].</span>
+                            </div>
+                        </div>
+                        <div class="linha-acoes"><button type="submit" class="botao">Determinante</button></div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="inv">
+                    <form data-api="/api/matriz/inversa" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="inv-a">Matriz A</label>
+                                <input id="inv-a" class="codigo" type="text" name="matriz" value="[[4,7],[2,6]]" required>
+                            </div>
+                        </div>
+                        <div class="linha-acoes"><button type="submit" class="botao">Inverter</button></div>
+                    </form>
+                </div>
+
+                <div class="painel-aba" data-painel="sys">
+                    <form data-api="/api/matriz/sistema" autocomplete="off">
+                        <div class="form-grade">
+                            <div class="campo largo">
+                                <label for="sys-a">Matriz A</label>
+                                <input id="sys-a" class="codigo" type="text" name="matriz" value="[[3,2,-4],[3,1,2],[4,3,-5]]" required>
+                            </div>
+                            <div class="campo largo">
+                                <label for="sys-b">Vetor b</label>
+                                <input id="sys-b" class="codigo" type="text" name="b" value="[0,5,-2]" required>
+                            </div>
+                        </div>
+                        <div class="linha-acoes">
+                            <button type="submit" class="botao">Resolver (Gauss–Jordan)</button>
+                        </div>
+                    </form>
+                </div>
+
+                {% if not modulos[8][2] %}
+                <div class="aviso-global" style="margin-top:14px">ℹ️ Requer TensorFlow: <code>pip install -r requirements.txt</code></div>
+                {% endif %}
+            </div>
+        </article>
+
+        {# ---------------- CONSTANTES ---------------- #}
+        <article id="constantes" class="ferramenta{{ '' if modulos[9][2] else ' indisponivel' }}" style="--cor-modulo:#ffd1e8">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">⚛</span>
+                <div>
+                    <h2>Constantes</h2>
+                    <div class="descricao">Repositório universal do OMEGA — clique para copiar</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <div class="chips"><span class="dica">carregando…</span></div>
+            </div>
+        </article>
+
+        {# ---------------- ELEMENTOS ---------------- #}
+        <article id="elementos" class="ferramenta{{ '' if modulos[10][2] else ' indisponivel' }}" style="--cor-modulo:#6bd6ff">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">🧪</span>
+                <div>
+                    <h2>Tabela Periódica &amp; Fluidos</h2>
+                    <div class="descricao">Busca local em dados de elementos e fluidos</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <div class="form-grade">
+                    <div class="campo largo">
+                        <label for="el-q">Buscar elemento (nome ou símbolo)</label>
+                        <input id="el-q" type="text" name="q" value="" placeholder="ex.: Oxigenio, Fe, H…">
+                        <span class="dica">Clique numa linha da tabela para ver as propriedades completas.</span>
+                    </div>
+                </div>
+                <div class="resultados-elementos"></div>
+            </div>
+        </article>
+
+        {# ---------------- VENTURI ---------------- #}
+        <article id="venturi" class="ferramenta{{ '' if modulos[11][2] else ' indisponivel' }}" style="--cor-modulo:#ff9d6b">
+            <div class="cabecalho-ferramenta">
+                <span class="icone-modulo">💨</span>
+                <div>
+                    <h2>Escoamento Venturi 3D</h2>
+                    <div class="descricao">Bocal convergente–divergente com choques normais</div>
+                </div>
+                <span class="seta-expandir">▾</span>
+            </div>
+            <div class="corpo-ferramenta">
+                <form autocomplete="off">
+                    <div class="form-grade">
+                        <div class="campo">
+                            <label for="ve-p0">p₀ estagnação (Pa)</label>
+                            <input id="ve-p0" type="number" step="any" min="1" name="p0" value="500000" required>
+                        </div>
+                        <div class="campo">
+                            <label for="ve-t0">T₀ estagnação (K)</label>
+                            <input id="ve-t0" type="number" step="any" min="1" name="T0" value="900" required>
+                        </div>
+                        <div class="campo">
+                            <label for="ve-gamma">γ (cp/cv)</label>
+                            <input id="ve-gamma" type="number" step="any" min="1.01" max="2" name="gamma" value="1.4" required>
+                        </div>
+                        <div class="campo">
+                            <label for="ve-l">L total (m)</label>
+                            <input id="ve-l" type="number" step="any" min="0.1" name="L" value="2" required>
+                        </div>
+                        <div class="campo">
+                            <label for="ve-ain">A entrada (m²)</label>
+                            <input id="ve-ain" type="number" step="any" min="1e-4" name="A_in" value="0.1" required>
+                        </div>
+                        <div class="campo">
+                            <label for="ve-agarg">A garganta (m²)</label>
+                            <input id="ve-agarg" type="number" step="any" min="1e-5" name="A_garg" value="0.02" required>
+                        </div>
+                    </div>
+                    <div class="linha-acoes">
+                        <button type="submit" class="botao">Simular escoamento</button>
+                        <span class="dica">Mapa do bocal colorido pela grandeza escolhida + perfis axiais.</span>
+                    </div>
+                </form>
+            </div>
+        </article>
+
+    </section>
+</main>
+
+<footer>
+    Ω <strong>OMEGA Utils</strong> — painel web gerado a partir dos solvers locais ·
+    execute com <code>python interface/app.py</code>
+</footer>
+
+<script src="{{ url_for('static', filename='js/omega.js') }}"></script>
+</body>
+</html>

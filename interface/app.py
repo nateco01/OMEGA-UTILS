@@ -11,6 +11,7 @@ Executar a partir da raiz do projeto:
 
 from __future__ import annotations
 
+import json
 import math
 import sys
 import traceback
@@ -178,18 +179,18 @@ def _modulo_disponivel(nome, solver):
 @app.route("/")
 def index():
     modulos = [
-        ("Integrais", INT_DEF is not None or SIMULACOES is not None, "calc"),
-        ("Derivadas", DERIVADAS is not None, "derivative"),
-        ("Equações & Física", EQS is not None or EDO is not None, "equation"),
-        ("Funções & Raízes", FUNCOES is not None or NAO_LINEAR is not None, "root"),
-        ("Teoremas Vetoriais", TEOREMAS is not None, "theorem"),
-        ("Simulação Monte Carlo", SIMULACOES is not None, "dice"),
-        ("Análise Estrutural", ESTRUTURAS is not None, "structure"),
-        ("Materiais Compósitos", MATERIAIS is not None, "layers"),
-        ("Álgebra Linear (Matrizes)", MATRIZES is not None, "matrix"),
-        ("Constantes", CONST is not None, "atom"),
-        ("Tabela Periódica & Fluidos", ElementosMateriais is not None, "table"),
-        ("Escoamento Venturi 3D", SimulacaoTempoRealVenturi3D is not None, "wind"),
+        ("integrais", "Integrais", INT_DEF is not None or SIMULACOES is not None, "calc"),
+        ("derivadas", "Derivadas", DERIVADAS is not None, "derivative"),
+        ("equacoes", "Equações & Física", EQS is not None or EDO is not None, "equation"),
+        ("funcoes", "Funções & Raízes", FUNCOES is not None or NAO_LINEAR is not None, "root"),
+        ("teoremas", "Teoremas Vetoriais", TEOREMAS is not None, "theorem"),
+        ("montecarlo", "Simulação Monte Carlo", SIMULACOES is not None, "dice"),
+        ("estruturas", "Análise Estrutural", ESTRUTURAS is not None, "structure"),
+        ("materiais", "Materiais Compósitos", MATERIAIS is not None, "layers"),
+        ("matrizes", "Álgebra Linear (Matrizes)", MATRIZES is not None, "matrix"),
+        ("constantes", "Constantes", CONST is not None, "atom"),
+        ("elementos", "Tabela Periódica & Fluidos", ElementosMateriais is not None, "table"),
+        ("venturi", "Escoamento Venturi 3D", SimulacaoTempoRealVenturi3D is not None, "wind"),
     ]
     avisos = []
     if MATRIZES is None:
@@ -208,6 +209,8 @@ def index():
 def api_integral_numerica():
     def executar():
         dados = request.get_json(force=True)
+        if INT_DEF is None:
+            raise ErroExpressao("módulo de integrais indisponível neste ambiente.")
         f, rotulo = _funcao_x(dados.get("funcao", ""))
         a = numero(dados.get("a"), "limite inferior")
         b = numero(dados.get("b"), "limite superior")
@@ -231,15 +234,16 @@ def api_integral_numerica():
             if isinstance(resultado, dict):
                 valor = resultado.get("valor", resultado.get("integral"))
                 detalhe = f"Simpson adaptativa (tol {tol:g}) — {resultado}"
+            elif isinstance(resultado, (list, tuple)):
+                valor = resultado[0]
+                detalhe = f"Simpson adaptativa (tol {tol:g})"
             else:
-                valor, detalhe = resultado[0], f"Simpson adaptativa (tol {tol:g})"
+                valor = resultado
+                detalhe = f"Simpson adaptativa (tol {tol:g})"
         else:
             raise ErroExpressao("método desconhecido; use simpson, trapezio ou adaptativa.")
 
         xs, ys = _curva_de_funcao(f, a, b)
-        area_positiva = sum(
-            (y if y is not None and y > 0 else 0) for y in ys
-        )
         return _resposta_ok(
             valor=formatar_numero(valor),
             valor_bruto=float(valor),
@@ -255,6 +259,8 @@ def api_integral_numerica():
 def api_integral_linha():
     def executar():
         dados = request.get_json(force=True)
+        if IntegralSolverIndefinidas is None:
+            raise ErroExpressao("módulo de integrais indisponível neste ambiente.")
         fx, _ = criar_funcao(dados.get("px", ""), variaveis=("t",))
         fy, _ = criar_funcao(dados.get("py", ""), variaveis=("t",))
         cx, rx = criar_funcao(dados.get("cx", ""), variaveis=("t",))
@@ -269,7 +275,7 @@ def api_integral_linha():
         ts = np.linspace(t0, t1, 200)
         return _resposta_ok(
             valor=formatar_numero(valor),
-            detalhe="∫ F·dr ao longo da curva parametrizada",
+            detalhe="∫ F·dr ao longo da curva parametrizada r(t) = (%s, %s)" % (rx, ry),
             grafico={
                 "curva_x": _numpy_para_lista(np.array([cx(t=float(t)) for t in ts])),
                 "curva_y": _numpy_para_lista(np.array([cy(t=float(t)) for t in ts])),
@@ -287,6 +293,8 @@ def api_integral_linha():
 def api_derivada():
     def executar():
         dados = request.get_json(force=True)
+        if DERIVADAS is None:
+            raise ErroExpressao("módulo de derivadas indisponível neste ambiente.")
         f, rotulo = _funcao_x(dados.get("funcao", ""))
         x0 = numero(dados.get("ponto"), "ponto x₀")
         h = float(dados.get("h") or 1e-5)
@@ -323,6 +331,8 @@ def api_derivada():
 def api_equacao_grau2():
     def executar():
         dados = request.get_json(force=True)
+        if EQS is None:
+            raise ErroExpressao("módulo de equações indisponível neste ambiente.")
         a = numero(dados.get("a"), "coeficiente a")
         b = numero(dados.get("b"), "coeficiente b")
         c = numero(dados.get("c"), "coeficiente c")
@@ -352,6 +362,8 @@ def api_equacao_grau2():
 def api_fisica_mrv():
     def executar():
         dados = request.get_json(force=True)
+        if EQS is None:
+            raise ErroExpressao("módulo de equações indisponível neste ambiente.")
         s0 = numero(dados.get("s0", 0), "posição inicial S₀")
         v0 = numero(dados.get("v0"), "velocidade inicial v₀")
         acc = numero(dados.get("a"), "aceleração a")
@@ -381,6 +393,8 @@ def api_fisica_mrv():
 def api_edo_rk4():
     def executar():
         dados = request.get_json(force=True)
+        if EDO is None:
+            raise ErroExpressao("módulo de EDOs indisponível neste ambiente.")
         expr = dados.get("dydt", "").strip() or "-y"
         func, rotulo = criar_funcao(expr, variaveis=("t", "y"))
         f = lambda t, y: func(t=t, y=y)
@@ -407,6 +421,8 @@ def api_edo_rk4():
 def api_raiz_bissecao():
     def executar():
         dados = request.get_json(force=True)
+        if NAO_LINEAR is None:
+            raise ErroExpressao("módulo de funções não lineares indisponível neste ambiente.")
         f, rotulo = _funcao_x(dados.get("funcao", ""))
         a = numero(dados.get("a"), "extremo a")
         b = numero(dados.get("b"), "extremo b")
@@ -428,6 +444,8 @@ def api_raiz_bissecao():
 def api_raiz_newton():
     def executar():
         dados = request.get_json(force=True)
+        if NAO_LINEAR is None or DERIVADAS is None:
+            raise ErroExpressao("módulos de funções/derivadas indisponíveis neste ambiente.")
         f, rotulo = _funcao_x(dados.get("funcao", ""))
         df = lambda x: DERIVADAS.DerivadaCentralizada(f, x)
         x0 = numero(dados.get("x0"), "chute inicial x₀")
@@ -449,6 +467,8 @@ def api_raiz_newton():
 def api_polimonio():
     def executar():
         dados = request.get_json(force=True)
+        if FUNCOES is None:
+            raise ErroExpressao("módulo de funções indisponível neste ambiente.")
         coeficientes = vetor(dados.get("coeficientes", ""), "coeficientes")
         grau = len(coeficientes) - 1
         if grau < 1 or grau > 4:
@@ -462,7 +482,8 @@ def api_polimonio():
         }
         raizes = metodos[grau](*args)
         poly = np.poly1d(coeficientes)
-        dominio = max(5.0, 2 * max(abs(r) for r in np.roots(coeficientes)) if any(np.roots(coeficientes)) else 5.0)
+        polos = np.roots(coeficientes)
+        dominio = max(5.0, 2 * max((abs(r) for r in polos), default=2.5))
         xs = np.linspace(-dominio, dominio, MAX_PLOT_PONTOS)
         ys = [poly(x) for x in xs]
         lista = []
@@ -492,6 +513,8 @@ def api_polimonio():
 def api_limite():
     def executar():
         dados = request.get_json(force=True)
+        if FUNCOES is None:
+            raise ErroExpressao("módulo de funções indisponível neste ambiente.")
         f, rotulo = _funcao_x(dados.get("funcao", ""))
         x0 = numero(dados.get("ponto"), "ponto x₀")
         direcao = dados.get("direcao") or "ambos"
@@ -499,7 +522,12 @@ def api_limite():
         xs_left = np.linspace(max(x0 - 1.0, -1e6), x0 - 1e-6, 120)
         xs_right = np.linspace(x0 + 1e-6, x0 + 1.0, 120)
         xs = np.concatenate([xs_left, xs_right])
-        ys = [f(float(x)) for x in xs]
+        ys = []
+        for xi in xs:
+            try:
+                ys.append(float(f(float(xi))))
+            except Exception:
+                ys.append(None)
         return _resposta_ok(
             limite=formatar_numero(valor),
             detalhe=f"lim x→{x0:g} f(x), f(x) = {rotulo}",
@@ -518,6 +546,8 @@ def api_limite():
 def api_teorema_green():
     def executar():
         dados = request.get_json(force=True)
+        if TEOREMAS is None:
+            raise ErroExpressao("módulo de teoremas vetoriais indisponível neste ambiente.")
         P, _ = criar_funcao(dados.get("P", "y"), variaveis=("x", "y"))
         Q, _ = criar_funcao(dados.get("Q", "-x"), variaveis=("x", "y"))
         cx, _ = criar_funcao(dados.get("cx", "cos(t)"), variaveis=("t",))
@@ -532,7 +562,8 @@ def api_teorema_green():
         )
         ts = np.linspace(0, 2 * math.pi, 200)
         return _resposta_ok(
-            resultado={k: formatar_numero(v) for k, v in resultado.items()},
+            resultado={k: (formatar_numero(v) if isinstance(v, (int, float)) else str(v))
+                       for k, v in resultado.items()},
             detalhe="Teorema de Green: ∮ P dx + Q dy = ∬ (∂Q/∂x − ∂P/∂y) dA",
             grafico={
                 "curva_x": _numpy_para_lista(np.array([cx(t=float(t)) for t in ts])),
@@ -551,6 +582,8 @@ def api_teorema_green():
 def api_montecarlo_integracao():
     def executar():
         dados = request.get_json(force=True)
+        if SIMULACOES is None:
+            raise ErroExpressao("módulo de simulações indisponível neste ambiente.")
         f, rotulo = _funcao_x(dados.get("funcao", ""))
         a = numero(dados.get("a"), "limite inferior")
         b = numero(dados.get("b"), "limite superior")
@@ -561,7 +594,7 @@ def api_montecarlo_integracao():
             kw["semente"] = int(semente)
         resultado = SIMULACOES.MonteCarloIntegracao1D(f, a, b, num_amostras=amostras, **kw)
         if isinstance(resultado, dict):
-            valor = resultado.get("valor", resultado.get("integral"))
+            valor = resultado.get("integral", resultado.get("valor"))
             resumo = {k: (formatar_numero(v) if isinstance(v, (int, float)) else v)
                       for k, v in resultado.items()}
         else:
@@ -592,6 +625,8 @@ def api_montecarlo_integracao():
 def api_estrutura_euler():
     def executar():
         dados = request.get_json(force=True)
+        if ESTRUTURAS is None:
+            raise ErroExpressao("módulo de análise estrutural indisponível neste ambiente.")
         e = numero(dados.get("modulo"), "módulo de elasticidade E") * 1e9  # GPa -> Pa
         inercia = numero(dados.get("inercia"), "momento de inércia I") * 1e-8  # cm⁴ -> m⁴
         comprimento = numero(dados.get("comprimento"), "comprimento L") / 100  # cm -> m
@@ -616,9 +651,10 @@ def api_estrutura_euler():
 def api_estrutura_fratura():
     def executar():
         dados = request.get_json(force=True)
+        if ESTRUTURAS is None:
+            raise ErroExpressao("módulo de análise estrutural indisponível neste ambiente.")
         sigma = numero(dados.get("tensao"), "tensão σ") * 1e6  # MPa -> Pa
-        kic = numero(dados.get("kic"), "tenacidade K_IC") * 1e6 / math.sqrt(1e6)  # MPa√m -> Pa√m
-        kic = numero(dados.get("kic"), "tenacidade K_IC") * 1e6  # MPa·√m → Pa·√m (1 MPa = 1e6 Pa)
+        kic = numero(dados.get("kic"), "tenacidade K_IC") * 1e6  # MPa·√m → Pa·√m
         y = numero(dados.get("y", 1), "fator geométrico Y")
         a_crit = ESTRUTURAS.comprimento_critico_trinca(kic, sigma, y)
         ki = ESTRUTURAS.fator_intensidade_tensao_modo_i(sigma, a_crit / 4, y)
@@ -641,48 +677,73 @@ def api_estrutura_fratura():
 def api_material_laminado():
     def executar():
         dados = request.get_json(force=True)
+        if MATERIAIS is None or Lamina is None or LaminaOrtotropica is None:
+            raise ErroExpressao("módulo de materiais compósitos indisponível neste ambiente.")
+
+        def escalar(nome, padrao):
+            """Campo numérico simples (aceita 'G' como multiplicador de 1e9)."""
+            texto = str(dados.get(nome, "") or "").strip()
+            if not texto:
+                return padrao
+            fator = 1.0
+            if texto.upper().endswith("G"):
+                fator, texto = 1e9, texto[:-1].strip()
+            return numero(texto, nome) * fator
+
         material = LaminaOrtotropica(
-            e1=numero(dados.get("e1", 140e9), "E1"),
-            e2=numero(dados.get("e2", 10e9), "E2"),
-            g12=numero(dados.get("g12", 7e9), "G12"),
+            e1=escalar("e1", 140e9),
+            e2=escalar("e2", 10e9),
+            g12=escalar("g12", 7e9),
             nu12=numero(dados.get("nu12", 0.3), "ν12"),
-            alpha1=numero(dados.get("alpha1", 0.0e-6), "α1"),
+            alpha1=numero(dados.get("alpha1", 0.0), "α1"),
             alpha2=numero(dados.get("alpha2", 22.5e-6), "α2"),
-            x_t=numero(dados.get("xt", 1500e6), "Xt"),
-            x_c=numero(dados.get("xc", 1200e6), "Xc"),
-            y_t=numero(dados.get("yt", 50e6), "Yt"),
-            y_c=numero(dados.get("yc", 200e6), "Yc"),
-            s=numero(dados.get("s", 70e6), "S"),
+            x_t=escalar("xt", 1500e6),
+            x_c=escalar("xc", 1200e6),
+            y_t=escalar("yt", 50e6),
+            y_c=escalar("yc", 200e6),
+            s=escalar("s", 70e6),
         )
-        pilhas = []
         angulos = vetor(dados.get("angulos", "[0, 90, 0]"), "ângulos das camadas")
         espessura = numero(dados.get("espessura", 0.15e-3), "espessura por camada")
-        for angulo in angulos:
-            pilhas.append(Lamina(material=material, angulo_graus=float(angulo), espessura=espessura))
-        nx = numero(dados.get("nx", 1e6), "Nx")
+        pilhas = [Lamina(material=material, angulo_graus=float(angulo), espessura=espessura)
+                  for angulo in angulos]
+        nx = escalar("nx", 1e6)
         resultado = MATERIAIS.analisar_laminado(pilhas, resultantes_membrana=(nx, 0.0, 0.0))
-        chaves_mostrar = ["ex_fx_m", "rigidez_extensao", "matriz_A", "deslocamentos", "tensoes"]
+
         resumo = {}
-        for chave in resultado.keys():
-            valor = resultado[chave]
+        for chave, valor in resultado.items():
             if isinstance(valor, np.ndarray):
-                resumo[chave] = np.round(valor, 4).tolist()
+                resumo[chave] = np.round(np.asarray(valor, dtype=float), 4).tolist()
             elif isinstance(valor, (int, float)):
                 resumo[chave] = formatar_numero(valor)
             elif isinstance(valor, list) and valor and isinstance(valor[0], dict):
-                resumo[chave] = [
-                    {kk: (formatar_numero(vv) if isinstance(vv, (int, float)) else vv)
-                     for kk, vv in item.items()}
-                    for item in valor
-                ]
+                # resultados por camada (topo/base) — reduzidos a escalares arredondados
+                camadas = []
+                for item in valor:
+                    camada = {}
+                    for lado, dados_lado in item.items():
+                        if isinstance(dados_lado, dict):
+                            camada[lado] = {
+                                kk: (np.round(np.asarray(vv, dtype=float), 4).tolist()
+                                     if isinstance(vv, np.ndarray) else float(vv))
+                                for kk, vv in dados_lado.items() if kk != "z"
+                            }
+                    camadas.append(camada)
+                resumo[chave] = camadas
+            elif isinstance(valor, list):
+                continue
             else:
                 try:
-                    resumo[chave] = json_serializar(valor)
+                    json_serializar(valor)
+                    resumo[chave] = valor
                 except Exception:
                     continue
-        return _resposta_ok(resumo=resumo,
-                            detalhe=f"Laminado [{', '.join(formatar_numero(a) for a in angulos)}]°, "
-                                    f"{len(pilhas)} camadas de {formatar_numero(espessura*1e3)} mm, Nx = {formatar_numero(nx/1e6)} MN/m")
+        return _resposta_ok(
+            resumo=resumo,
+            detalhe=(f"Laminado [{', '.join(formatar_numero(a) for a in angulos)}]°, "
+                     f"{len(pilhas)} camada(s) de {formatar_numero(espessura * 1e3)} mm, "
+                     f"Nx = {formatar_numero(nx / 1e6)} MN/m"),
+        )
 
     return _tratar(executar)
 
@@ -759,6 +820,8 @@ def api_matriz_sistema():
 
 @app.route("/api/constantes")
 def api_constantes():
+    if CONST is None:
+        return _resposta_erro("módulo de constantes indisponível neste ambiente.", status=500)
     itens = []
     for nome, valor in vars(CONST).items():
         if nome.startswith("_"):
@@ -774,6 +837,8 @@ def api_constantes():
 
 @app.route("/api/elementos/buscar")
 def api_elementos_buscar():
+    if ElementosMateriais is None:
+        return _resposta_erro("módulo de elementos indisponível neste ambiente.", status=500)
     termo = (request.args.get("q") or "").strip()
     try:
         tabela = ElementosMateriais.carregar_elemento()
@@ -799,6 +864,8 @@ def api_elementos_buscar():
 
 @app.route("/api/elementos/detalhe/<simbolo>")
 def api_elemento_detalhe(simbolo):
+    if ElementosMateriais is None:
+        return _resposta_erro("módulo de elementos indisponível neste ambiente.", status=500)
     try:
         dados = ElementosMateriais.carregar_elemento(simbolo.upper() if simbolo.islower() else simbolo)
     except Exception:
@@ -811,6 +878,8 @@ def api_elemento_detalhe(simbolo):
 
 @app.route("/api/fluidos/lista")
 def api_fluidos_lista():
+    if ElementosMateriais is None:
+        return _resposta_erro("módulo de fluidos indisponível neste ambiente.", status=500)
     try:
         dados = ElementosMateriais.carregar_fluido()
     except Exception as exc:
@@ -824,6 +893,8 @@ def api_fluidos_lista():
 
 @app.route("/api/fluidos/detalhe/<nome>")
 def api_fluido_detalhe(nome):
+    if ElementosMateriais is None:
+        return _resposta_erro("módulo de fluidos indisponível neste ambiente.", status=500)
     try:
         dados = ElementosMateriais.carregar_fluido(nome)
     except Exception as exc:
@@ -839,6 +910,8 @@ def api_fluido_detalhe(nome):
 def api_venturi():
     def executar():
         dados = request.get_json(force=True)
+        if SimulacaoTempoRealVenturi3D is None:
+            raise ErroExpressao("simulador Venturi indisponível neste ambiente.")
         simulador = SimulacaoTempoRealVenturi3D(
             p0=numero(dados.get("p0", 500000), "pressão de estagnação p₀"),
             T0=numero(dados.get("T0", 900), "temperatura de estagnação T₀"),
